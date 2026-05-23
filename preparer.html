@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Préparer une ressource ouverte — Open Course Kit</title>
+  <meta name="description" content="Guide pratique pour préparer une ressource pédagogique ouverte avant publication : inventaire, droits tiers, données personnelles, formats, documentation et checklist." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Préparer une ressource ouverte</p>
+      <h1>Avant de publier : nettoyer, documenter, clarifier</h1>
+      <p class="lead">
+        Une ressource pédagogique ouverte doit pouvoir être comprise, reprise et adaptée par d’autres. Avant de la publier,
+        il faut donc vérifier ce qu’elle contient, ce qui peut être partagé, ce qui doit être cité, ce qui doit être retiré
+        et ce qui mérite d’être mieux documenté.
+      </p>
+      <p>
+        Cette page propose une méthode simple pour transformer un dossier de travail, un support de cours ou un ensemble de fichiers
+        en ressource pédagogique prête à être publiée.
+      </p>
+    </section>
+
+    <section class="notice warning" aria-labelledby="attention">
+      <h2 id="attention">Point de vigilance</h2>
+      <p>
+        Préparer une ressource ouverte ne consiste pas à tout mettre en ligne. Il faut distinguer les contenus originaux,
+        les contenus tiers, les données personnelles, les documents confidentiels et les éléments qui restent soumis à des droits
+        ou à des règles institutionnelles.
+      </p>
+    </section>
+
+    <section aria-labelledby="methode">
+      <h2 id="methode">Une méthode en six étapes</h2>
+
+      <div class="steps">
+        <article class="step">
+          <span class="step-number">1</span>
+          <h3>Inventorier</h3>
+          <p>
+            Lister les fichiers, supports, images, données, exemples, consignes, modèles, scripts, documents sources et éléments
+            annexes qui composent la ressource.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">2</span>
+          <h3>Trier</h3>
+          <p>
+            Séparer ce qui est original, ce qui vient de tiers, ce qui peut être partagé, ce qui doit être cité, ce qui doit être
+            remplacé et ce qui ne doit pas être publié.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">3</span>
+          <h3>Nettoyer</h3>
+          <p>
+            Retirer les données sensibles, anonymiser les exemples, supprimer les documents internes, vérifier les images et remplacer
+            les contenus dont les droits ne sont pas clairs.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">4</span>
+          <h3>Choisir les formats</h3>
+          <p>
+            Prévoir une version facile à consulter et, lorsque c’est utile, une version source modifiable : Markdown, HTML, ODT,
+            PPTX, CSV, SVG ou tout autre format réutilisable.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">5</span>
+          <h3>Documenter</h3>
+          <p>
+            Ajouter un titre clair, une description, un public cible, des objectifs pédagogiques, un mode d’emploi, une licence,
+            des crédits et des conseils de réutilisation.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">6</span>
+          <h3>Relire</h3>
+          <p>
+            Vérifier que la ressource est compréhensible hors contexte, que les droits sont explicités et qu’une autre personne
+            peut raisonnablement la reprendre sans vous demander d’explications supplémentaires.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="inventaire">
+      <h2 id="inventaire">1. Faire l’inventaire des fichiers</h2>
+      <p>
+        La première étape consiste à regarder le dossier tel qu’il existe réellement. Une ressource pédagogique contient souvent
+        plus d’éléments qu’on ne l’imagine : supports de cours, consignes, images, exports, brouillons, documents sources, fichiers
+        de travail, scripts, bibliographies, captures d’écran ou exemples étudiants.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Exemple de grille d’inventaire</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Type</th>
+              <th scope="col">Origine</th>
+              <th scope="col">Publier ?</th>
+              <th scope="col">Action à prévoir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Support de cours</th>
+              <td>Diaporama</td>
+              <td>Création originale</td>
+              <td>Oui</td>
+              <td>Ajouter licence et version PDF</td>
+            </tr>
+            <tr>
+              <th scope="row">Illustrations</th>
+              <td>Images</td>
+              <td>Sources diverses</td>
+              <td>À vérifier</td>
+              <td>Contrôler les droits ou remplacer</td>
+            </tr>
+            <tr>
+              <th scope="row">Travaux étudiants</th>
+              <td>Exemples</td>
+              <td>Production étudiante</td>
+              <td>Non par défaut</td>
+              <td>Anonymiser, demander autorisation ou retirer</td>
+            </tr>
+            <tr>
+              <th scope="row">Bibliographie</th>
+              <td>Références</td>
+              <td>Sources citées</td>
+              <td>Oui</td>
+              <td>Normaliser les références</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="contenus-originaux">
+      <h2 id="contenus-originaux">2. Identifier les contenus originaux</h2>
+      <p>
+        Les contenus originaux sont les éléments que vous avez produits vous-même ou que votre équipe a produits dans un cadre
+        permettant leur publication : textes, consignes, gabarits, exemples, schémas, fichiers web, jeux de données pédagogiques,
+        activités ou scénarios.
+      </p>
+
+      <div class="notice success">
+        <h3>À faire</h3>
+        <p>
+          Pour chaque contenu original, indiquez clairement la licence choisie. Dans Open Course Kit et plus largement dans
+          JEDI-OpenLab, l’option recommandée par défaut est CC0 1.0 Universal pour les contenus pédagogiques originaux, sauf mention contraire.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="contenus-tiers">
+      <h2 id="contenus-tiers">3. Repérer les contenus tiers</h2>
+      <p>
+        Un contenu tiers est un élément que vous n’avez pas créé vous-même ou dont les droits ne vous appartiennent pas entièrement.
+        Il peut être utilisable, mais il ne peut pas être automatiquement placé sous la même licence que vos propres contenus.
+      </p>
+
+      <ul class="checklist">
+        <li>Images trouvées en ligne, photographies, pictogrammes, captures d’écran</li>
+        <li>Extraits de livres, articles, rapports, pages web ou documents institutionnels</li>
+        <li>Logos, marques, identités visuelles, noms de produits ou services</li>
+        <li>Polices, bibliothèques, scripts, plugins, composants logiciels</li>
+        <li>Documents sources importés dans un corpus, une base de connaissances ou un outil RAG</li>
+        <li>Productions étudiantes, témoignages, verbatims, données d’enquête</li>
+      </ul>
+
+      <div class="notice warning">
+        <h3>Bonne pratique</h3>
+        <p>
+          Lorsque les droits d’un contenu tiers ne sont pas clairs, il vaut mieux le remplacer, le retirer, le citer sans le republier,
+          ou renvoyer vers la source originale plutôt que de l’intégrer directement dans une ressource ouverte.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="donnees-personnelles">
+      <h2 id="donnees-personnelles">4. Vérifier les données personnelles et sensibles</h2>
+      <p>
+        Les ressources pédagogiques contiennent parfois des éléments qui n’ont pas vocation à être diffusés : noms d’étudiants,
+        adresses e-mail, copies, notes, commentaires, photos de groupe, verbatims, résultats d’enquête, échanges internes ou documents
+        institutionnels non publics.
+      </p>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>À retirer ou anonymiser</h3>
+          <p>
+            Noms, coordonnées, numéros étudiants, photos identifiables, notes, commentaires individualisés, copies, productions
+            étudiantes non autorisées ou informations permettant d’identifier une personne.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>À vérifier avant publication</h3>
+          <p>
+            Données d’enquête, verbatims, exemples issus de situations réelles, documents internes, captures d’écran d’outils,
+            échanges de mails, supports comportant des informations institutionnelles sensibles.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="formats">
+      <h2 id="formats">5. Choisir des formats réutilisables</h2>
+      <p>
+        Une ressource vraiment réutilisable ne doit pas seulement être consultable. Elle doit aussi pouvoir être adaptée. Lorsque
+        c’est possible, proposez à la fois une version de consultation et une version source modifiable.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Formats utiles pour publier une ressource pédagogique ouverte</caption>
+          <thead>
+            <tr>
+              <th scope="col">Besoin</th>
+              <th scope="col">Format de consultation</th>
+              <th scope="col">Format source conseillé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Guide ou documentation</th>
+              <td>HTML, PDF</td>
+              <td>Markdown, HTML, ODT</td>
+            </tr>
+            <tr>
+              <th scope="row">Support de présentation</th>
+              <td>PDF</td>
+              <td>PPTX, ODP, Markdown slides</td>
+            </tr>
+            <tr>
+              <th scope="row">Tableau ou jeu de données</th>
+              <td>HTML, PDF</td>
+              <td>CSV, XLSX, JSON</td>
+            </tr>
+            <tr>
+              <th scope="row">Schéma ou illustration</th>
+              <td>PNG, JPG</td>
+              <td>SVG, fichier source éditable</td>
+            </tr>
+            <tr>
+              <th scope="row">Webapp ou démonstrateur</th>
+              <td>Site publié</td>
+              <td>HTML, CSS, JavaScript, README</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="documentation">
+      <h2 id="documentation">6. Documenter la ressource</h2>
+      <p>
+        Une ressource ouverte doit pouvoir être comprise par quelqu’un qui ne connaît pas le contexte initial. La documentation
+        n’est donc pas un supplément : c’est ce qui rend la réutilisation possible.
+      </p>
+
+      <div class="cards three-columns">
+        <article class="card">
+          <h3>Contexte</h3>
+          <p>
+            Indiquer le public visé, le niveau, la durée, les prérequis, le matériel nécessaire et le contexte d’usage initial.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Usage</h3>
+          <p>
+            Expliquer comment utiliser la ressource : déroulé, consignes, étapes, modalités d’animation, variantes possibles.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Réutilisation</h3>
+          <p>
+            Préciser la licence, les crédits, les sources, les limites, les contenus tiers et les conditions de citation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="arborescence">
+      <h2 id="arborescence">7. Proposer une arborescence simple</h2>
+      <p>
+        Une structure claire facilite la reprise. Même pour une petite ressource, quelques dossiers bien nommés permettent de
+        comprendre rapidement ce qui relève de la documentation, des sources, des images ou des fichiers diffusables.
+      </p>
+
+      <div class="copy-block" aria-labelledby="modele-arborescence">
+        <h3 id="modele-arborescence">Exemple d’arborescence</h3>
+        <pre><code>ma-ressource-ouverte/
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── docs/
+│   ├── index.md
+│   └── guide-animation.md
+├── assets/
+│   ├── images/
+│   └── fichiers/
+├── sources/
+│   └── fichiers-modifiables/
+└── credits/
+    └── sources-et-droits.md</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="checklist-publication">
+      <h2 id="checklist-publication">Checklist avant publication</h2>
+      <p>
+        Avant de publier, cette checklist permet de vérifier les points essentiels. Elle peut être copiée dans un README, une issue
+        GitHub ou un document de suivi.
+      </p>
+
+      <div class="copy-block" aria-labelledby="checklist-copiable">
+        <h3 id="checklist-copiable">Modèle copiable</h3>
+        <pre><code>## Checklist avant publication
+
+- [ ] Les auteurs et contributeurs sont identifiés.
+- [ ] Les contenus originaux sont distingués des contenus tiers.
+- [ ] La licence des contenus originaux est indiquée.
+- [ ] Les images, icônes, captures d’écran et médias ont été vérifiés.
+- [ ] Les extraits textuels et citations sont correctement attribués.
+- [ ] Les données personnelles ont été retirées ou anonymisées.
+- [ ] Les documents internes ou confidentiels ont été retirés.
+- [ ] Les marques, logos et services tiers sont signalés comme tels.
+- [ ] Une section “Crédits et sources” est présente.
+- [ ] Un fichier LICENSE est présent.
+- [ ] Un README.md décrit le projet et ses conditions de réutilisation.
+- [ ] Les fichiers sont organisés dans une arborescence compréhensible.
+- [ ] Les formats sources modifiables sont fournis quand c’est pertinent.
+- [ ] Les consignes sont compréhensibles hors contexte.
+- [ ] Les liens principaux ont été testés.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="erreurs-frequentes">
+      <h2 id="erreurs-frequentes">Erreurs fréquentes à éviter</h2>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Mettre une licence sur tout sans vérifier</h3>
+          <p>
+            Une licence ouverte ne couvre pas automatiquement les contenus tiers intégrés à la ressource. Il faut signaler les exceptions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Publier uniquement un PDF fermé</h3>
+          <p>
+            Un PDF peut être utile pour consulter, mais il est souvent insuffisant pour permettre une adaptation facile de la ressource.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Oublier le contexte d’usage</h3>
+          <p>
+            Sans public cible, durée, objectifs ou consignes, une ressource devient difficile à reprendre par quelqu’un d’autre.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Laisser des données personnelles</h3>
+          <p>
+            Les noms, notes, copies, photos et productions étudiantes doivent faire l’objet d’une attention particulière avant publication.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="a-retenir" class="notice">
+      <h2 id="a-retenir">À retenir</h2>
+      <p>
+        Préparer une ressource ouverte, c’est rendre explicite ce qui est souvent implicite : qui a produit quoi, sous quelle licence,
+        avec quelles sources, dans quel contexte et pour quels usages possibles. Plus la ressource est claire, plus elle devient
+        réellement réutilisable.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

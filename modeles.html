@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modèles et checklists — Open Course Kit</title>
+  <meta name="description" content="Modèles copiables pour publier une ressource pédagogique ouverte : README, licence, crédits, fiche ressource, citation, checklists et structure de dépôt." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Modèles et checklists</p>
+      <h1>Des blocs prêts à copier pour publier une ressource ouverte</h1>
+      <p class="lead">
+        Cette page rassemble les modèles utiles pour préparer, documenter et publier une ressource pédagogique ouverte :
+        README, licence, crédits, citation, fiche ressource, checklists et arborescences.
+      </p>
+      <p>
+        Les modèles sont volontairement génériques. Ils sont faits pour être copiés, adaptés, raccourcis, complétés ou intégrés
+        dans un dépôt GitHub, un site de cours, une documentation ou un dossier projet.
+      </p>
+    </section>
+
+    <section class="notice" aria-labelledby="mode-emploi">
+      <h2 id="mode-emploi">Mode d’emploi</h2>
+      <p>
+        Remplacez les passages entre crochets par vos propres informations. Supprimez les sections inutiles. Ajoutez les précisions
+        nécessaires sur les droits tiers, les sources, les contributeurs et les limites d’usage. Une bonne documentation est une documentation
+        que quelqu’un d’autre peut comprendre sans connaître son contexte initial.
+      </p>
+    </section>
+
+    <section aria-labelledby="sommaire-modeles">
+      <h2 id="sommaire-modeles">Sommaire des modèles</h2>
+      <div class="cards three-columns">
+        <article class="card">
+          <h3>Documentation</h3>
+          <ul>
+            <li><a href="#modele-readme">README</a></li>
+            <li><a href="#modele-fiche">Fiche ressource</a></li>
+            <li><a href="#modele-consigne">Consigne d’activité</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Droits et citations</h3>
+          <ul>
+            <li><a href="#modele-licence">Licence CC0</a></li>
+            <li><a href="#modele-droits">Crédits et droits tiers</a></li>
+            <li><a href="#modele-citation">Citation</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Publication</h3>
+          <ul>
+            <li><a href="#modele-arborescence">Arborescence</a></li>
+            <li><a href="#checklists">Checklists</a></li>
+            <li><a href="#modele-index">Page d’accueil</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-readme">
+      <h2 id="modele-readme">Modèle de README.md</h2>
+      <p>
+        Le README est la porte d’entrée du dépôt. Il doit expliquer rapidement ce que contient la ressource, à qui elle s’adresse,
+        comment l’utiliser et sous quelle licence elle est publiée.
+      </p>
+
+      <div class="copy-block">
+        <pre><code># [Titre de la ressource]
+
+## Présentation
+
+[Décrire brièvement la ressource, son objectif, son contexte de production et son intérêt pédagogique.]
+
+## Public cible
+
+Cette ressource s’adresse à :
+
+- [public 1]
+- [public 2]
+- [public 3]
+
+## Objectifs pédagogiques
+
+À l’issue de l’utilisation de cette ressource, les participants pourront :
+
+- [objectif 1]
+- [objectif 2]
+- [objectif 3]
+
+## Contenu du dépôt
+
+- `docs/` : documentation ou site publié
+- `assets/` : images, médias et fichiers associés
+- `sources/` : fichiers sources modifiables
+- `credits/` : sources, crédits et droits tiers
+
+## Utilisation
+
+[Expliquer comment consulter, utiliser, adapter ou animer la ressource.]
+
+## Pré-requis
+
+- [pré-requis 1]
+- [pré-requis 2]
+
+## Modalités de réutilisation
+
+Cette ressource peut être copiée, adaptée, transformée et réutilisée selon les conditions indiquées dans la section licence.
+
+## Licence
+
+Sauf mention contraire, les contenus originaux de ce projet sont placés sous [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).
+
+Les marques, logiciels, services tiers, documents sources et ressources citées restent soumis à leurs licences et droits respectifs.
+
+## Crédits et sources
+
+Voir le fichier `credits/sources-et-droits.md` ou la section dédiée aux crédits.
+
+## Citation
+
+Pour citer cette ressource :
+
+&gt; [Nom, Prénom]. [Titre de la ressource]. [Année]. [URL].
+
+## Contact
+
+[Nom, contact, site web ou lien vers le projet.]</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-licence">
+      <h2 id="modele-licence">Modèle de section licence CC0</h2>
+      <p>
+        Ce modèle convient aux ressources pédagogiques originales que l’on souhaite rendre aussi réutilisables que possible.
+        Il peut être placé dans un README, une page “À propos” ou un fichier dédié.
+      </p>
+
+      <div class="copy-block">
+        <pre><code>## Licence
+
+Sauf mention contraire, les contenus, documents, exemples, fichiers web et ressources originales du projet sont placés sous [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).
+
+Cela signifie que l’auteur renonce, dans toute la mesure permise par la loi, à ses droits patrimoniaux sur ces contenus afin qu’ils puissent être copiés, adaptés, réutilisés, republiés et transformés sans demander d’autorisation.
+
+Les marques, logiciels, services tiers, documents sources importés dans le corpus et ressources citées restent soumis à leurs licences et droits respectifs.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-double-licence">
+      <h2 id="modele-double-licence">Modèle de double licence contenus / code</h2>
+      <p>
+        Si le projet contient à la fois des contenus pédagogiques et du code informatique, il peut être utile de distinguer les deux.
+      </p>
+
+      <div class="copy-block">
+        <pre><code>## Licence
+
+Sauf mention contraire, les contenus pédagogiques originaux de ce projet sont placés sous [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).
+
+Le code source du projet est placé sous licence [MIT / Apache 2.0 / GPL / autre licence à préciser].
+
+Les marques, logiciels, services tiers, bibliothèques, documents sources importés et ressources citées restent soumis à leurs licences et droits respectifs.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-droits">
+      <h2 id="modele-droits">Modèle de fichier sources-et-droits.md</h2>
+      <p>
+        Ce fichier permet de signaler clairement ce qui relève des contenus originaux, des contenus tiers, des citations, des marques,
+        des captures d’écran ou des ressources importées.
+      </p>
+
+      <div class="copy-block">
+        <pre><code># Sources, crédits et droits tiers
+
+## Contenus originaux
+
+Sauf mention contraire, les contenus originaux de ce projet sont placés sous CC0 1.0 Universal.
+
+## Contributeurs
+
+- [Nom, rôle ou contribution]
+- [Nom, rôle ou contribution]
+
+## Images et médias
+
+| Élément | Source | Licence ou statut | Remarques |
+|---|---|---|---|
+| [nom-du-fichier.png] | [source] | [licence] | [remarque] |
+| [capture-interface.png] | [service ou outil représenté] | [droits réservés / usage illustratif] | [ne pas republier séparément] |
+
+## Documents, extraits et ressources citées
+
+- [Référence 1]
+- [Référence 2]
+- [Référence 3]
+
+## Marques, logiciels et services tiers
+
+Les marques, logos, logiciels, bibliothèques, services tiers et documents cités restent soumis à leurs licences et droits respectifs.
+
+## Données personnelles
+
+[Aucune donnée personnelle n’est volontairement publiée dans ce dépôt / préciser les mesures d’anonymisation mises en place.]</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-fiche">
+      <h2 id="modele-fiche">Modèle de fiche ressource pédagogique</h2>
+      <p>
+        Cette fiche permet de décrire une ressource de façon réutilisable : public, objectifs, durée, matériel, déroulé, variantes,
+        évaluation et licence.
+      </p>
+
+      <div class="copy-block">
+        <pre><code># Fiche ressource pédagogique
+
+## Titre
+
+[Titre de la ressource]
+
+## Résumé
+
+[Décrire la ressource en quelques lignes.]
+
+## Type de ressource
+
+[Support de cours / activité / atelier / jeu sérieux / guide / étude de cas / webapp / autre]
+
+## Public cible
+
+[Public concerné, niveau, formation, prérequis éventuels.]
+
+## Durée estimée
+
+[Durée de consultation, d’animation ou de réalisation.]
+
+## Objectifs pédagogiques
+
+- [objectif 1]
+- [objectif 2]
+- [objectif 3]
+
+## Pré-requis
+
+- [pré-requis 1]
+- [pré-requis 2]
+
+## Matériel nécessaire
+
+- [matériel 1]
+- [matériel 2]
+
+## Déroulé conseillé
+
+1. [Étape 1]
+2. [Étape 2]
+3. [Étape 3]
+
+## Production attendue
+
+[Décrire le livrable, la trace, la réponse, la discussion ou l’activité attendue.]
+
+## Modalités d’évaluation possibles
+
+[Décrire comment la ressource peut être utilisée dans une évaluation formative ou sommative.]
+
+## Conseils d’animation
+
+[Ajouter des conseils pratiques, points de vigilance, variantes selon la taille du groupe.]
+
+## Variantes et adaptations
+
+- [variante 1]
+- [variante 2]
+
+## Licence
+
+[Indiquer la licence applicable.]
+
+## Crédits et sources
+
+[Indiquer les auteurs, contributeurs, sources, images et ressources tierces.]</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-consigne">
+      <h2 id="modele-consigne">Modèle de consigne d’activité</h2>
+      <p>
+        Une consigne réutilisable doit être compréhensible hors contexte. Elle précise ce qu’il faut faire, pourquoi, comment,
+        avec quel matériel et avec quel résultat attendu.
+      </p>
+
+      <div class="copy-block">
+        <pre><code># Consigne d’activité
+
+## Contexte
+
+[Présenter brièvement la situation, le thème ou le problème travaillé.]
+
+## Public
+
+[Indiquer le public concerné : niveau, formation, prérequis éventuels.]
+
+## Durée
+
+[Indiquer la durée prévue de l’activité.]
+
+## Objectif
+
+[Formuler ce que les participants doivent comprendre, produire ou être capables de faire.]
+
+## Matériel nécessaire
+
+- [support 1]
+- [support 2]
+- [outil 1]
+
+## Déroulé
+
+1. [Étape 1]
+2. [Étape 2]
+3. [Étape 3]
+
+## Production attendue
+
+[Décrire le livrable, la réponse, la discussion ou la trace attendue.]
+
+## Critères de réussite
+
+- [critère 1]
+- [critère 2]
+- [critère 3]
+
+## Variante possible
+
+[Indiquer comment adapter l’activité à un autre contexte, une autre durée ou un autre public.]</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-citation">
+      <h2 id="modele-citation">Modèles de citation</h2>
+      <p>
+        Une ressource ouverte gagne à proposer une forme de citation simple. Cela facilite la réutilisation et permet de garder une trace
+        de l’origine du travail, même lorsqu’une licence très permissive comme CC0 est choisie.
+      </p>
+
+      <div class="copy-block">
+        <pre><code>## Comment citer cette ressource ?
+
+Format recommandé :
+
+&gt; [Nom, Prénom]. [Titre de la ressource]. [Nom du projet ou du site]. [Année]. [URL].
+
+Exemple :
+
+&gt; Debaecker, Jean. Open Course Kit. JEDI-OpenLab. 2026. [URL du projet].</code></pre>
+      </div>
+
+      <div class="copy-block">
+        <h3>Modèle CITATION.cff</h3>
+        <pre><code>cff-version: 1.2.0
+title: "[Titre de la ressource]"
+message: "Si vous utilisez cette ressource, vous pouvez la citer ainsi."
+type: educational-resource
+authors:
+  - family-names: "[Nom]"
+    given-names: "[Prénom]"
+year: 2026
+license: CC0-1.0
+url: "[URL de la ressource]"</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-arborescence">
+      <h2 id="modele-arborescence">Modèle d’arborescence de dépôt</h2>
+      <p>
+        Cette structure peut servir de base pour un dépôt de ressource pédagogique ouverte publié avec GitHub Pages.
+      </p>
+
+      <div class="copy-block">
+        <pre><code>ma-ressource-ouverte/
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── CHANGELOG.md
+├── docs/
+│   ├── index.html
+│   ├── guide.html
+│   └── ressources.html
+├── assets/
+│   ├── images/
+│   ├── fichiers/
+│   └── styles/
+├── sources/
+│   ├── documents-modifiables/
+│   ├── donnees/
+│   └── schemas/
+├── exemples/
+│   └── exemple-seance/
+└── credits/
+    └── sources-et-droits.md</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="modele-index">
+      <h2 id="modele-index">Modèle de page d’accueil HTML</h2>
+      <p>
+        Ce modèle minimal peut servir de point de départ pour une page publiée avec GitHub Pages.
+      </p>
+
+      <div class="copy-block">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;[Titre de la ressource]&lt;/title&gt;
+  &lt;meta name="description" content="[Description courte de la ressource.]" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;[Titre de la ressource]&lt;/h1&gt;
+    &lt;p&gt;[Phrase de présentation.]&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Présentation&lt;/h2&gt;
+      &lt;p&gt;[Décrire la ressource, son public et son usage.]&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Utilisation&lt;/h2&gt;
+      &lt;p&gt;[Expliquer comment consulter ou réutiliser la ressource.]&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Licence&lt;/h2&gt;
+      &lt;p&gt;Sauf mention contraire, les contenus originaux sont placés sous CC0 1.0 Universal.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="checklists" aria-labelledby="checklists-title">
+      <h2 id="checklists-title">Checklists copiables</h2>
+
+      <section aria-labelledby="checklist-publication">
+        <h3 id="checklist-publication">Checklist avant publication</h3>
+        <div class="copy-block">
+          <pre><code>## Checklist avant publication
+
+- [ ] Les auteurs et contributeurs sont identifiés.
+- [ ] Les contenus originaux sont distingués des contenus tiers.
+- [ ] La licence des contenus originaux est indiquée.
+- [ ] Les images, icônes, captures d’écran et médias ont été vérifiés.
+- [ ] Les extraits textuels et citations sont correctement attribués.
+- [ ] Les données personnelles ont été retirées ou anonymisées.
+- [ ] Les documents internes ou confidentiels ont été retirés.
+- [ ] Les marques, logos et services tiers sont signalés comme tels.
+- [ ] Une section “Crédits et sources” est présente.
+- [ ] Un fichier LICENSE est présent.
+- [ ] Un README.md décrit le projet et ses conditions de réutilisation.
+- [ ] Les fichiers sont organisés dans une arborescence compréhensible.
+- [ ] Les formats sources modifiables sont fournis quand c’est pertinent.
+- [ ] Les consignes sont compréhensibles hors contexte.
+- [ ] Les liens principaux ont été testés.</code></pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="checklist-github">
+        <h3 id="checklist-github">Checklist GitHub</h3>
+        <div class="copy-block">
+          <pre><code>## Checklist GitHub
+
+- [ ] Le nom du dépôt est clair et lisible.
+- [ ] La description du dépôt indique l’objectif de la ressource.
+- [ ] Le dépôt contient un README.md complet.
+- [ ] Le dépôt contient un fichier LICENSE.
+- [ ] La licence est aussi mentionnée dans le README.
+- [ ] Les contenus tiers sont signalés dans une section ou un fichier dédié.
+- [ ] Les fichiers sont organisés dans des dossiers compréhensibles.
+- [ ] Les fichiers importants ont des noms simples, sans espaces ni accents.
+- [ ] Les formats sources modifiables sont fournis quand c’est pertinent.
+- [ ] Les liens internes fonctionnent.
+- [ ] Les images s’affichent correctement.
+- [ ] GitHub Pages est activé si un site public est prévu.
+- [ ] L’URL publique a été testée.
+- [ ] Le dépôt ne contient pas de données personnelles ou confidentielles.</code></pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="checklist-accessibilite">
+        <h3 id="checklist-accessibilite">Checklist accessibilité minimale</h3>
+        <div class="copy-block">
+          <pre><code>## Checklist accessibilité minimale
+
+- [ ] La page contient un titre principal clair.
+- [ ] Les titres sont hiérarchisés correctement.
+- [ ] Les paragraphes sont courts et lisibles.
+- [ ] Les liens ont des intitulés explicites.
+- [ ] Les images importantes ont un texte alternatif.
+- [ ] Les informations importantes ne sont pas uniquement dans des images.
+- [ ] La couleur n’est pas le seul moyen de transmettre une information.
+- [ ] Les contrastes sont suffisants pour une lecture confortable.
+- [ ] Les tableaux sont simples et disposent d’en-têtes compréhensibles.
+- [ ] Les fichiers lourds sont évités ou signalés.
+- [ ] Les documents sont disponibles dans un format modifiable quand c’est pertinent.
+- [ ] Les consignes sont compréhensibles hors contexte.
+- [ ] La ressource est testée sur mobile.
+- [ ] Les liens et fichiers téléchargeables fonctionnent.</code></pre>
+        </div>
+      </section>
+    </section>
+
+    <section aria-labelledby="a-retenir" class="notice">
+      <h2 id="a-retenir">À retenir</h2>
+      <p>
+        Les modèles ne remplacent pas la réflexion sur les droits, les usages et les publics. Ils servent à éviter la page blanche,
+        homogénéiser les dépôts et rendre les ressources plus faciles à reprendre. Le bon modèle est celui que l’on adapte proprement.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

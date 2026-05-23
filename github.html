@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structurer un dépôt GitHub — Open Course Kit</title>
+  <meta name="description" content="Guide pratique pour structurer un dépôt GitHub, documenter une ressource pédagogique ouverte et la publier avec GitHub Pages." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Structurer et publier</p>
+      <h1>Utiliser GitHub pour publier une ressource pédagogique ouverte</h1>
+      <p class="lead">
+        GitHub peut servir à publier bien plus que du code. Pour une ressource pédagogique ouverte, il permet de conserver les fichiers sources,
+        documenter les usages, suivre les évolutions, afficher une licence claire et publier facilement un mini-site avec GitHub Pages.
+      </p>
+      <p>
+        Cette page propose une structure simple pour transformer un dossier pédagogique en dépôt clair, réutilisable et publiable.
+      </p>
+    </section>
+
+    <section class="notice warning" aria-labelledby="attention-github">
+      <h2 id="attention-github">Point de vigilance</h2>
+      <p>
+        GitHub est un outil puissant, mais il peut être intimidant pour des publics non techniques. Une bonne publication pédagogique
+        doit donc rester lisible sans supposer que les utilisateurs connaissent Git, les branches, les commits ou les pull requests.
+      </p>
+    </section>
+
+    <section aria-labelledby="pourquoi-github">
+      <h2 id="pourquoi-github">Pourquoi GitHub pour une ressource pédagogique ?</h2>
+
+      <div class="cards three-columns">
+        <article class="card">
+          <h3>Centraliser</h3>
+          <p>
+            Regrouper au même endroit les supports, fichiers sources, images, modèles, licences, crédits et documentations associées.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Documenter</h3>
+          <p>
+            Donner un contexte d’usage, expliquer comment reprendre la ressource, indiquer la licence et signaler les contenus tiers.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Publier</h3>
+          <p>
+            Transformer un dépôt en site web public grâce à GitHub Pages, sans infrastructure lourde ni serveur à maintenir.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="structure-minimale">
+      <h2 id="structure-minimale">Structure minimale recommandée</h2>
+      <p>
+        Un dépôt utile n’a pas besoin d’être complexe. Pour commencer, il doit surtout contenir un fichier de présentation,
+        une licence, une documentation et les fichiers réutilisables.
+      </p>
+
+      <div class="copy-block" aria-labelledby="arborescence-minimale">
+        <h3 id="arborescence-minimale">Arborescence minimale</h3>
+        <pre><code>ma-ressource-ouverte/
+├── README.md
+├── LICENSE
+├── docs/
+│   └── index.html
+└── assets/
+    ├── images/
+    └── fichiers/</code></pre>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Rôle des principaux fichiers</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Rôle</th>
+              <th scope="col">Priorité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">README.md</th>
+              <td>Présente le projet, son public, ses usages, sa licence et ses conditions de réutilisation.</td>
+              <td>Indispensable</td>
+            </tr>
+            <tr>
+              <th scope="row">LICENSE</th>
+              <td>Indique la licence applicable aux contenus originaux ou au code selon le cas.</td>
+              <td>Indispensable</td>
+            </tr>
+            <tr>
+              <th scope="row">docs/</th>
+              <td>Contient les pages publiées avec GitHub Pages ou la documentation principale.</td>
+              <td>Fortement conseillé</td>
+            </tr>
+            <tr>
+              <th scope="row">assets/</th>
+              <td>Regroupe les images, fichiers téléchargeables, médias ou documents associés.</td>
+              <td>Conseillé</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="structure-complete">
+      <h2 id="structure-complete">Structure plus complète</h2>
+      <p>
+        Pour une ressource plus ambitieuse, il peut être utile de séparer les sources modifiables, les crédits, les exemples,
+        les exports et la documentation publiée.
+      </p>
+
+      <div class="copy-block" aria-labelledby="arborescence-complete">
+        <h3 id="arborescence-complete">Arborescence conseillée</h3>
+        <pre><code>ma-ressource-ouverte/
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── CHANGELOG.md
+├── docs/
+│   ├── index.html
+│   ├── guide.html
+│   └── ressources.html
+├── assets/
+│   ├── images/
+│   ├── fichiers/
+│   └── styles/
+├── sources/
+│   ├── documents-modifiables/
+│   ├── donnees/
+│   └── schemas/
+├── exemples/
+│   └── exemple-seance/
+└── credits/
+    └── sources-et-droits.md</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="readme">
+      <h2 id="readme">Le README : la porte d’entrée du dépôt</h2>
+      <p>
+        Le fichier <code>README.md</code> est souvent le premier élément lu dans un dépôt GitHub. Il doit permettre de comprendre
+        rapidement ce qu’est la ressource, à qui elle s’adresse, comment l’utiliser et dans quelles conditions elle peut être reprise.
+      </p>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Un README doit dire</h3>
+          <ul>
+            <li>ce qu’est le projet ;</li>
+            <li>à qui il s’adresse ;</li>
+            <li>ce qu’il contient ;</li>
+            <li>comment l’utiliser ;</li>
+            <li>comment le citer ;</li>
+            <li>sous quelle licence il est publié.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Un README doit éviter</h3>
+          <ul>
+            <li>les descriptions trop vagues ;</li>
+            <li>les fichiers non expliqués ;</li>
+            <li>les licences absentes ;</li>
+            <li>les droits tiers non signalés ;</li>
+            <li>les consignes compréhensibles uniquement par l’auteur.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="copy-block" aria-labelledby="modele-readme">
+        <h3 id="modele-readme">Modèle court de README</h3>
+        <pre><code># Titre de la ressource
+
+## Présentation
+
+Courte description de la ressource, de son objectif et de son contexte de production.
+
+## Public cible
+
+Indiquer les publics concernés : enseignants, étudiants, formateurs, ingénieurs pédagogiques, etc.
+
+## Objectifs pédagogiques
+
+- Objectif 1
+- Objectif 2
+- Objectif 3
+
+## Contenu du dépôt
+
+- `docs/` : documentation ou site publié
+- `assets/` : images et fichiers associés
+- `sources/` : fichiers modifiables ou sources
+- `credits/` : sources, crédits et droits tiers
+
+## Utilisation
+
+Expliquer comment consulter, adapter ou utiliser la ressource.
+
+## Licence
+
+Sauf mention contraire, les contenus originaux de ce projet sont placés sous CC0 1.0 Universal.
+
+Les marques, logiciels, services tiers, documents sources et ressources citées restent soumis à leurs licences et droits respectifs.
+
+## Citation
+
+Indiquer comment citer la ressource.
+
+## Contact
+
+Indiquer un contact, un lien vers le projet ou une page de contribution.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="publier-pages">
+      <h2 id="publier-pages">Publier avec GitHub Pages</h2>
+      <p>
+        GitHub Pages permet de publier un site web statique à partir d’un dépôt. Pour Open Course Kit, c’est une solution adaptée
+        aux guides, documentations, petits outils HTML/CSS/JavaScript, ressources pédagogiques et pages de valorisation.
+      </p>
+
+      <div class="steps">
+        <article class="step">
+          <span class="step-number">1</span>
+          <h3>Créer le dépôt</h3>
+          <p>
+            Créez un dépôt GitHub avec un nom explicite, court et lisible. Ajoutez une description claire et, si possible,
+            quelques mots-clés.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">2</span>
+          <h3>Ajouter les fichiers</h3>
+          <p>
+            Ajoutez au minimum un <code>README.md</code>, un fichier <code>LICENSE</code>, un dossier <code>docs/</code> et une page
+            <code>index.html</code> dans ce dossier.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">3</span>
+          <h3>Activer GitHub Pages</h3>
+          <p>
+            Dans les paramètres du dépôt, activez GitHub Pages en choisissant la branche principale et le dossier de publication,
+            par exemple <code>/docs</code> ou la racine du dépôt.
+          </p>
+        </article>
+
+        <article class="step">
+          <span class="step-number">4</span>
+          <h3>Tester le site</h3>
+          <p>
+            Vérifiez l’URL publique, testez les liens, les images, les fichiers téléchargeables, l’affichage mobile et la lisibilité
+            des pages principales.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="nommage">
+      <h2 id="nommage">Nommer les fichiers simplement</h2>
+      <p>
+        Des noms de fichiers clairs rendent un dépôt beaucoup plus facile à parcourir. Mieux vaut éviter les noms trop longs,
+        les espaces, les accents et les versions ambiguës comme <code>final-v3-vrai-final.docx</code>.
+        Un nom stable et descriptif facilite la reprise par d’autres utilisateurs.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Exemples de nommage</caption>
+          <thead>
+            <tr>
+              <th scope="col">À éviter</th>
+              <th scope="col">Préférer</th>
+              <th scope="col">Pourquoi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mon cours final version 2.docx</td>
+              <td><code>guide-animation.md</code></td>
+              <td>Lisible, stable, sans espace ni ambiguïté.</td>
+            </tr>
+            <tr>
+              <td>Image écran 23 mai.png</td>
+              <td><code>capture-interface.png</code></td>
+              <td>Décrit le contenu plutôt que la date de capture.</td>
+            </tr>
+            <tr>
+              <td>nouveau truc test.html</td>
+              <td><code>prototype-activite.html</code></td>
+              <td>Indique la fonction du fichier.</td>
+            </tr>
+            <tr>
+              <td>sources diverses.md</td>
+              <td><code>sources-et-droits.md</code></td>
+              <td>Clarifie le rôle juridique et documentaire du fichier.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="citation">
+      <h2 id="citation">Ajouter une citation avec CITATION.cff</h2>
+      <p>
+        Pour faciliter la citation d’une ressource, il est possible d’ajouter un fichier <code>CITATION.cff</code> à la racine du dépôt.
+        GitHub le reconnaît et peut afficher un bouton “Cite this repository”. C’est utile pour les ressources pédagogiques, les guides,
+        les corpus, les jeux de données ou les démonstrateurs.
+      </p>
+
+      <div class="copy-block" aria-labelledby="modele-citation">
+        <h3 id="modele-citation">Modèle simple de CITATION.cff</h3>
+        <pre><code>cff-version: 1.2.0
+title: "Titre de la ressource"
+message: "Si vous utilisez cette ressource, merci de la citer."
+type: educational-resource
+authors:
+  - family-names: "Nom"
+    given-names: "Prénom"
+year: 2026
+license: CC0-1.0
+url: "https://exemple.github.io/ma-ressource/"</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="changelog">
+      <h2 id="changelog">Documenter les évolutions avec un changelog</h2>
+      <p>
+        Un fichier <code>CHANGELOG.md</code> permet d’indiquer les principales évolutions d’une ressource : ajout d’un chapitre,
+        correction d’une erreur, changement de licence, nouvelle version d’un fichier ou amélioration d’un modèle.
+      </p>
+
+      <div class="copy-block" aria-labelledby="modele-changelog">
+        <h3 id="modele-changelog">Modèle court de CHANGELOG</h3>
+        <pre><code># Changelog
+
+## 1.0.0 — 2026-05-23
+
+### Ajouté
+
+- Première version publique de la ressource.
+- Ajout du README, de la licence et de la documentation.
+
+### Modifié
+
+- Aucun changement pour cette première version.
+
+### Corrigé
+
+- Aucun correctif pour cette première version.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="droits-github">
+      <h2 id="droits-github">Clarifier les droits dans le dépôt</h2>
+      <p>
+        Le dépôt doit éviter toute ambiguïté : ce qui est original peut être placé sous une licence ouverte, mais les contenus tiers
+        doivent rester associés à leurs propres conditions d’usage.
+      </p>
+
+      <div class="copy-block" aria-labelledby="modele-droits">
+        <h3 id="modele-droits">Modèle de fichier sources-et-droits.md</h3>
+        <pre><code># Sources, crédits et droits tiers
+
+## Contenus originaux
+
+Sauf mention contraire, les contenus originaux de ce projet sont placés sous CC0 1.0 Universal.
+
+## Images et médias
+
+| Élément | Source | Licence ou statut | Remarques |
+|---|---|---|---|
+| image-exemple.png | Création originale | CC0 1.0 | Réutilisable |
+| capture-outil.png | Capture d’un service tiers | Droits réservés / usage illustratif | Ne pas republier séparément |
+
+## Bibliographie et ressources citées
+
+- Référence 1
+- Référence 2
+- Référence 3
+
+## Marques et services tiers
+
+Les marques, logos, logiciels, services tiers et documents cités restent soumis à leurs licences et droits respectifs.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="checklist-github">
+      <h2 id="checklist-github">Checklist GitHub avant publication</h2>
+      <p>
+        Cette checklist peut être utilisée avant de rendre le dépôt public ou avant d’activer GitHub Pages.
+      </p>
+
+      <div class="copy-block" aria-labelledby="checklist-github-copiable">
+        <h3 id="checklist-github-copiable">Modèle copiable</h3>
+        <pre><code>## Checklist GitHub
+
+- [ ] Le nom du dépôt est clair et lisible.
+- [ ] La description du dépôt indique l’objectif de la ressource.
+- [ ] Le dépôt contient un README.md complet.
+- [ ] Le dépôt contient un fichier LICENSE.
+- [ ] La licence est aussi mentionnée dans le README.
+- [ ] Les contenus tiers sont signalés dans une section ou un fichier dédié.
+- [ ] Les fichiers sont organisés dans des dossiers compréhensibles.
+- [ ] Les fichiers importants ont des noms simples, sans espaces ni accents.
+- [ ] Les formats sources modifiables sont fournis quand c’est pertinent.
+- [ ] Les liens internes fonctionnent.
+- [ ] Les images s’affichent correctement.
+- [ ] GitHub Pages est activé si un site public est prévu.
+- [ ] L’URL publique a été testée.
+- [ ] Le dépôt ne contient pas de données personnelles ou confidentielles.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="erreurs-frequentes" class="section-spaced">
+      <h2 id="erreurs-frequentes">Erreurs fréquentes à éviter</h2>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Un dépôt sans README</h3>
+          <p>
+            Sans README, une ressource peut être techniquement disponible mais pratiquement inutilisable. Le README est le mode d’emploi minimal.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Une licence absente ou ambiguë</h3>
+          <p>
+            Sans licence claire, les visiteurs ne savent pas ce qu’ils peuvent faire avec la ressource. Par prudence, ils risquent de ne pas la réutiliser.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Des fichiers sources oubliés</h3>
+          <p>
+            Publier seulement une version finale peut limiter les adaptations. Les fichiers modifiables augmentent fortement la valeur d’usage.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Un site publié mais non testé</h3>
+          <p>
+            Liens cassés, images absentes, chemins incorrects : mieux vaut tester le site comme si l’on découvrait la ressource pour la première fois.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="a-retenir" class="notice">
+      <h2 id="a-retenir">À retenir</h2>
+      <p>
+        Un bon dépôt GitHub pédagogique n’est pas seulement un espace de stockage. C’est une ressource documentée, citable, lisible,
+        réutilisable et publiable. Le triptyque minimal : <code>README.md</code>, <code>LICENSE</code>, documentation claire. Le reste peut venir ensuite.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

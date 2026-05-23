@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibilité et réutilisabilité — Open Course Kit</title>
+  <meta name="description" content="Guide pratique pour rendre une ressource pédagogique ouverte plus accessible, lisible, réutilisable et adaptable." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Accessibilité et réutilisabilité</p>
+      <h1>Rendre une ressource pédagogique vraiment utilisable</h1>
+      <p class="lead">
+        Une ressource ouverte n’est pas seulement une ressource disponible. Elle doit aussi être lisible, compréhensible,
+        navigable, adaptable et utilisable par des personnes, des contextes et des équipements différents.
+      </p>
+      <p>
+        Cette page propose des repères simples pour améliorer l’accessibilité et la réutilisabilité d’une ressource pédagogique,
+        sans transformer chaque publication en chantier interminable. L’objectif : faire mieux, progressivement, avec des gestes concrets.
+      </p>
+    </section>
+
+    <section class="notice warning" aria-labelledby="accessibilite-prudence">
+      <h2 id="accessibilite-prudence">Point de vigilance</h2>
+      <p>
+        L’accessibilité n’est pas une option décorative ni un bonus de fin de projet. Elle conditionne l’accès réel aux ressources.
+        Mais elle ne doit pas non plus devenir un frein absolu à la publication : publier une ressource perfectible, documentée et améliorable
+        peut être préférable à ne rien publier du tout.
+      </p>
+    </section>
+
+    <section aria-labelledby="principes">
+      <h2 id="principes">Quatre principes simples</h2>
+
+      <div class="cards four-columns">
+        <article class="card">
+          <h3>Lisible</h3>
+          <p>
+            Le contenu doit pouvoir être lu sans effort inutile : titres clairs, paragraphes courts, vocabulaire explicite,
+            structure visible et mise en page aérée.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Navigable</h3>
+          <p>
+            La ressource doit pouvoir être parcourue facilement : sommaire, liens explicites, hiérarchie des titres, pages nommées
+            de façon compréhensible.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Adaptable</h3>
+          <p>
+            Une autre personne doit pouvoir modifier la ressource : formats sources disponibles, fichiers organisés, consignes et contexte documentés.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Robuste</h3>
+          <p>
+            La ressource doit rester utilisable sur différents supports : ordinateur, mobile, impression, lecteur d’écran, faible connexion
+            ou environnement institutionnel contraint.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="structure">
+      <h2 id="structure">1. Structurer le contenu</h2>
+      <p>
+        Une bonne structure aide tout le monde : personnes qui lisent vite, personnes qui utilisent un lecteur d’écran, personnes qui cherchent
+        une information précise, collègues qui veulent adapter la ressource, étudiants qui reviennent au support après la séance.
+      </p>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>À faire</h3>
+          <ul>
+            <li>Utiliser un seul titre principal <code>h1</code> par page.</li>
+            <li>Hiérarchiser les titres dans l’ordre : <code>h2</code>, puis <code>h3</code>, puis <code>h4</code>.</li>
+            <li>Découper les contenus longs en sections courtes.</li>
+            <li>Ajouter une introduction qui explique l’objectif de la page.</li>
+            <li>Utiliser des listes lorsque cela clarifie vraiment l’information.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>À éviter</h3>
+          <ul>
+            <li>Utiliser des titres uniquement pour grossir le texte.</li>
+            <li>Sauter des niveaux de titres sans raison.</li>
+            <li>Publier une page très longue sans repères internes.</li>
+            <li>Multiplier les encadrés sans hiérarchie claire.</li>
+            <li>Cacher des informations importantes dans des images.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="liens">
+      <h2 id="liens">2. Rendre les liens explicites</h2>
+      <p>
+        Les liens doivent être compréhensibles hors contexte. Une personne qui parcourt la page rapidement ou qui utilise un lecteur d’écran
+        doit pouvoir savoir où mène le lien sans lire tout le paragraphe autour.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Exemples de liens plus accessibles</caption>
+          <thead>
+            <tr>
+              <th scope="col">À éviter</th>
+              <th scope="col">Préférer</th>
+              <th scope="col">Pourquoi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Cliquer ici</code></td>
+              <td><code>Consulter le guide des licences</code></td>
+              <td>Le lien indique directement sa destination.</td>
+            </tr>
+            <tr>
+              <td><code>En savoir plus</code></td>
+              <td><code>Lire la recommandation UNESCO sur les REL</code></td>
+              <td>Le lien reste compréhensible isolément.</td>
+            </tr>
+            <tr>
+              <td><code>Télécharger</code></td>
+              <td><code>Télécharger le modèle de README au format Markdown</code></td>
+              <td>Le format et l’objet du téléchargement sont explicites.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="images">
+      <h2 id="images">3. Décrire les images utiles</h2>
+      <p>
+        Les images importantes doivent avoir un texte alternatif. Il ne s’agit pas de décrire chaque pixel, mais de transmettre l’information
+        utile portée par l’image. Une image décorative peut avoir un attribut <code>alt=""</code> vide.
+      </p>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Image informative</h3>
+          <p>
+            Si l’image contient une information nécessaire à la compréhension, le texte alternatif doit résumer cette information.
+          </p>
+          <pre><code>&lt;img src="schema-alignement.png" alt="Schéma montrant la relation entre objectifs pédagogiques, activités d’apprentissage et évaluations."&gt;</code></pre>
+        </article>
+
+        <article class="card">
+          <h3>Image décorative</h3>
+          <p>
+            Si l’image sert seulement à décorer ou à créer une ambiance visuelle, elle peut être ignorée par les technologies d’assistance.
+          </p>
+          <pre><code>&lt;img src="motif-decoratif.svg" alt=""&gt;</code></pre>
+        </article>
+      </div>
+
+      <div class="notice">
+        <h3>Bon réflexe</h3>
+        <p>
+          Si une capture d’écran contient du texte important, ne laissez pas ce texte uniquement dans l’image. Reprenez l’information essentielle
+          dans le corps de la page ou dans une légende.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="couleurs">
+      <h2 id="couleurs">4. Ne pas dépendre uniquement de la couleur</h2>
+      <p>
+        La couleur peut aider à organiser l’information, mais elle ne doit pas être le seul moyen de comprendre une consigne, un statut,
+        une erreur ou une catégorie. Il faut ajouter un texte, une icône, un motif ou une indication explicite.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Exemples de reformulation</caption>
+          <thead>
+            <tr>
+              <th scope="col">Moins accessible</th>
+              <th scope="col">Plus accessible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Les éléments en rouge sont obligatoires.</td>
+              <td>Les éléments marqués “obligatoire” sont à compléter.</td>
+            </tr>
+            <tr>
+              <td>Les bonnes réponses sont en vert.</td>
+              <td>Les bonnes réponses sont indiquées par la mention “Réponse correcte”.</td>
+            </tr>
+            <tr>
+              <td>Les cartes bleues sont pour les enseignants.</td>
+              <td>Les cartes “Enseignant” sont destinées aux enseignants.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="contrastes">
+      <h2 id="contrastes">5. Vérifier les contrastes et la lisibilité</h2>
+      <p>
+        Un bon contraste entre le texte et le fond améliore la lecture pour tout le monde : personnes malvoyantes, lecture sur mobile,
+        vidéoprojection, fatigue visuelle, faible luminosité ou impression de mauvaise qualité. La lisibilité doit être vérifiée
+        dès la conception, en particulier pour les textes clairs sur fond clair.
+      </p>
+
+      <ul class="checklist">
+        <li>Éviter le texte gris très clair sur fond blanc.</li>
+        <li>Éviter les petits textes sur des images de fond.</li>
+        <li>Préférer une taille de police confortable.</li>
+        <li>Limiter les blocs de texte entièrement en majuscules.</li>
+        <li>Vérifier l’affichage sur mobile et en vidéoprojection si la ressource est utilisée en salle.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="tableaux">
+      <h2 id="tableaux">6. Utiliser les tableaux avec modération</h2>
+      <p>
+        Les tableaux sont utiles pour comparer ou structurer des informations. En revanche, ils deviennent vite difficiles à lire
+        sur mobile ou avec des technologies d’assistance lorsqu’ils sont trop grands ou utilisés uniquement pour faire de la mise en page.
+      </p>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Bon usage</h3>
+          <p>
+            Comparer des licences, lister des formats, présenter une checklist structurée, organiser une grille simple.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Usage à éviter</h3>
+          <p>
+            Utiliser un tableau pour placer visuellement des blocs de texte, créer une mise en page complexe ou aligner des éléments décoratifs.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="formats">
+      <h2 id="formats">7. Fournir des formats sources</h2>
+      <p>
+        L’accessibilité rejoint ici la réutilisabilité : une ressource publiée uniquement dans un format figé sera moins facile à adapter.
+        Quand c’est possible, il est préférable de fournir un format de consultation et un format source modifiable.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <caption>Formats utiles pour faciliter la reprise</caption>
+          <thead>
+            <tr>
+              <th scope="col">Type de ressource</th>
+              <th scope="col">Format de consultation</th>
+              <th scope="col">Format source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Guide</th>
+              <td>HTML, PDF</td>
+              <td>Markdown, HTML, ODT</td>
+            </tr>
+            <tr>
+              <th scope="row">Diaporama</th>
+              <td>PDF</td>
+              <td>PPTX, ODP, Markdown</td>
+            </tr>
+            <tr>
+              <th scope="row">Schéma</th>
+              <td>PNG, JPG</td>
+              <td>SVG, fichier éditable</td>
+            </tr>
+            <tr>
+              <th scope="row">Données</th>
+              <td>Tableau HTML, PDF</td>
+              <td>CSV, JSON, XLSX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="consignes">
+      <h2 id="consignes">8. Rendre les consignes compréhensibles hors contexte</h2>
+      <p>
+        Une ressource pédagogique circule souvent loin de son contexte initial. Une consigne comprise dans un cours précis peut devenir obscure
+        une fois isolée. Pour favoriser la réutilisation, il faut expliciter le public, le moment, le matériel, la durée et le résultat attendu.
+      </p>
+
+      <div class="copy-block" aria-labelledby="modele-consigne">
+        <h3 id="modele-consigne">Modèle de consigne réutilisable</h3>
+        <pre><code>## Consigne d’activité
+
+### Public
+
+Indiquer le public concerné : niveau, formation, prérequis éventuels.
+
+### Durée
+
+Indiquer la durée prévue de l’activité.
+
+### Objectif
+
+Formuler ce que les participants doivent comprendre, produire ou être capables de faire.
+
+### Matériel nécessaire
+
+Lister les supports, outils, documents ou équipements nécessaires.
+
+### Déroulé
+
+1. Étape 1
+2. Étape 2
+3. Étape 3
+
+### Production attendue
+
+Décrire le livrable, la réponse, la discussion ou la trace attendue.
+
+### Variante possible
+
+Indiquer comment adapter l’activité à un autre contexte.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="checklist-accessibilite">
+      <h2 id="checklist-accessibilite">Checklist accessibilité minimale</h2>
+      <p>
+        Cette checklist ne remplace pas un audit complet, mais elle permet déjà d’éviter les obstacles les plus fréquents.
+      </p>
+
+      <div class="copy-block" aria-labelledby="checklist-accessibilite-copiable">
+        <h3 id="checklist-accessibilite-copiable">Modèle copiable</h3>
+        <pre><code>## Checklist accessibilité minimale
+
+- [ ] La page contient un titre principal clair.
+- [ ] Les titres sont hiérarchisés correctement.
+- [ ] Les paragraphes sont courts et lisibles.
+- [ ] Les liens ont des intitulés explicites.
+- [ ] Les images importantes ont un texte alternatif.
+- [ ] Les informations importantes ne sont pas uniquement dans des images.
+- [ ] La couleur n’est pas le seul moyen de transmettre une information.
+- [ ] Les contrastes sont suffisants pour une lecture confortable.
+- [ ] Les tableaux sont simples et disposent d’en-têtes compréhensibles.
+- [ ] Les fichiers lourds sont évités ou signalés.
+- [ ] Les documents sont disponibles dans un format modifiable quand c’est pertinent.
+- [ ] Les consignes sont compréhensibles hors contexte.
+- [ ] La ressource est testée sur mobile.
+- [ ] Les liens et fichiers téléchargeables fonctionnent.</code></pre>
+      </div>
+    </section>
+
+    <section aria-labelledby="erreurs-frequentes">
+      <h2 id="erreurs-frequentes">Erreurs fréquentes à éviter</h2>
+
+      <div class="cards two-columns">
+        <article class="card">
+          <h3>Tout mettre dans une image</h3>
+          <p>
+            Un schéma peut être très utile, mais les informations essentielles doivent aussi être disponibles sous forme de texte.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Publier un PDF sans source</h3>
+          <p>
+            Un PDF seul peut être consultable, mais difficile à modifier. Pour une ressource ouverte, le fichier source est souvent précieux.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Écrire des liens vagues</h3>
+          <p>
+            Les liens comme “ici”, “voir plus” ou “cliquez là” deviennent vite inutilisables lorsqu’ils sont lus hors contexte.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Oublier le mobile</h3>
+          <p>
+            Beaucoup de ressources sont consultées sur petit écran. Une page lisible uniquement sur grand écran est moins réutilisable.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="a-retenir" class="notice">
+      <h2 id="a-retenir">À retenir</h2>
+      <p>
+        Une ressource accessible et réutilisable est une ressource qui explique son contexte, donne accès à ses sources, reste lisible
+        sur plusieurs supports et n’exclut pas inutilement certains usages. L’objectif n’est pas la perfection immédiate, mais une publication
+        plus claire, plus robuste et plus accueillante.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
