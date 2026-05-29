@@ -67,10 +67,24 @@
               <span>Une ressource JEDI-OpenLab</span>
             </span>
           </a>
-          <nav class="main-nav" aria-label="Navigation principale">
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+          <nav class="main-nav" id="primary-nav" aria-label="Navigation principale">
             ${nav}
           </nav>
         </div>`;
+
+      const menuButton = header.querySelector(".menu-toggle");
+      const primaryNav = header.querySelector("#primary-nav");
+      menuButton?.addEventListener("click", () => {
+        const isOpen = primaryNav?.classList.toggle("is-open") || false;
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+      primaryNav?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          primaryNav.classList.remove("is-open");
+          menuButton?.setAttribute("aria-expanded", "false");
+        });
+      });
     }
 
     const footer = document.querySelector(".site-footer");
@@ -123,6 +137,15 @@
         }, 1600);
       });
       block.prepend(button);
+    });
+  };
+
+  const enhanceTables = () => {
+    document.querySelectorAll(".table-wrapper").forEach((wrapper) => {
+      wrapper.setAttribute("tabindex", "0");
+      if (!wrapper.hasAttribute("aria-label")) {
+        wrapper.setAttribute("aria-label", "Tableau défilable horizontalement");
+      }
     });
   };
 
@@ -469,6 +492,7 @@ ${objectives}
     renderAuditTool();
     renderTemplateGenerators();
     enhanceCopyBlocks();
+    enhanceTables();
   };
 
   if (document.readyState === "loading") {
