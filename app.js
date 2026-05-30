@@ -100,7 +100,7 @@
             <a href="a-propos.html">À propos</a>
             <a href="licences.html">Licences</a>
             <a href="modeles.html">Modèles</a>
-            <a href="LICENSE">Licence MIT</a>
+            <a href="LICENSE">CC BY 4.0</a>
           </div>
         </div>`;
     }
@@ -357,9 +357,8 @@
               <textarea id="readme-description" name="description" placeholder="Décrire la ressource et son usage principal."></textarea>
               <label for="readme-license">Licence</label>
               <select id="readme-license" name="license">
-                <option>MIT</option>
-                <option>CC0 1.0 Universal</option>
                 <option>CC BY 4.0</option>
+                <option>CC0 1.0 Universal</option>
                 <option>CC BY-SA 4.0</option>
                 <option>Licence à préciser</option>
               </select>
@@ -401,8 +400,8 @@
       const target = getValue(form, "public") || "[Public cible]";
       const description = getValue(form, "description") || "[Description courte de la ressource.]";
       const license = getValue(form, "license") || "[Licence]";
-      const licenseNotice = license === "MIT"
-        ? "Ce projet est distribué sous licence MIT. Voir le fichier `LICENSE`."
+      const licenseNotice = license === "CC BY 4.0"
+        ? "Ressource éducative libre (REL) au sens de la Recommandation UNESCO de 2019. Sauf mention contraire, les contenus originaux sont placés sous licence Creative Commons Attribution 4.0 International — CC BY 4.0. Les contenus tiers conservent leurs droits et licences propres. Voir le site principal de JEDI-OpenLab pour plus d’informations."
         : `Sauf mention contraire, les contenus originaux de ce projet sont placés sous ${license}.`;
       updateBlock(
         "#readme-output",
