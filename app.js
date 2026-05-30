@@ -11,6 +11,7 @@
     { file: "accessibilite.html", label: "Accessibilité" },
     { file: "modeles.html", label: "Modèles" },
     { file: "a-propos.html", label: "À propos" },
+    { file: "https://jedi-openlab.github.io/jedi/", label: "JEDI-OpenLab" },
   ];
 
   const escapeHtml = (value) =>
