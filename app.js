@@ -1,5 +1,5 @@
 (() => {
-  const version = "2026-05-23";
+  const version = "2026-05-30";
   const logoPath = "assets/jedi-openlab-logo.png";
   const currentFile = window.location.pathname.split("/").pop() || "index.html";
 
@@ -100,7 +100,7 @@
             <a href="a-propos.html">À propos</a>
             <a href="licences.html">Licences</a>
             <a href="modeles.html">Modèles</a>
-            <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.fr">CC0 1.0 Universal</a>
+            <a href="LICENSE">Licence MIT</a>
           </div>
         </div>`;
     }
@@ -357,6 +357,7 @@
               <textarea id="readme-description" name="description" placeholder="Décrire la ressource et son usage principal."></textarea>
               <label for="readme-license">Licence</label>
               <select id="readme-license" name="license">
+                <option>MIT</option>
                 <option>CC0 1.0 Universal</option>
                 <option>CC BY 4.0</option>
                 <option>CC BY-SA 4.0</option>
@@ -400,6 +401,9 @@
       const target = getValue(form, "public") || "[Public cible]";
       const description = getValue(form, "description") || "[Description courte de la ressource.]";
       const license = getValue(form, "license") || "[Licence]";
+      const licenseNotice = license === "MIT"
+        ? "Ce projet est distribué sous licence MIT. Voir le fichier `LICENSE`."
+        : `Sauf mention contraire, les contenus originaux de ce projet sont placés sous ${license}.`;
       updateBlock(
         "#readme-output",
         `# ${title}
@@ -425,7 +429,7 @@ Cette ressource s’adresse à : ${target}.
 
 ## Licence
 
-Sauf mention contraire, les contenus originaux de ce projet sont placés sous ${license}.
+${licenseNotice}
 
 Les marques, logiciels, services tiers, documents sources et ressources citées restent soumis à leurs licences et droits respectifs.`
       );
