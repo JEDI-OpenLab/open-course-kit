@@ -1,234 +1,664 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>Open Course Kit — Publier des ressources pédagogiques ouvertes</title>
-  <meta name="description" content="Open Course Kit est un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Align-o-matic | JEDI-OpenLab</title>
+    <meta name="description" content="Application web JEDI-OpenLab pour comprendre, formuler et aligner des objectifs pédagogiques avec Bloom, les activités et l'évaluation.">
+    <meta property="og:title" content="Align-o-matic | JEDI-OpenLab">
+    <meta property="og:description" content="Objectifs pédagogiques, taxonomie de Bloom et alignement pédagogique en atelier interactif.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JEDI-OpenLab">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://jedi-openlab.github.io/jedi/PIX/favicon-32.png">
+    <link rel="apple-touch-icon" href="https://jedi-openlab.github.io/jedi/PIX/favicon-180.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css?v=2026-05-29.1">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Ressources éducatives libres</p>
-      <h1>Publier des ressources pédagogiques ouvertes, réutilisables et documentées</h1>
-      <p class="lead">
-        Open Course Kit est un guide pratique pour aider les enseignants, ingénieurs pédagogiques, formateurs et équipes projet
-        à transformer des supports pédagogiques en ressources ouvertes : compréhensibles, correctement licenciées, faciles à adapter
-        et prêtes à être publiées.
-      </p>
-      <p>
-        Le projet s’inscrit dans l’écosystème JEDI-OpenLab et prolonge une conviction simple : une ressource pédagogique gagne en valeur
-        lorsqu’elle peut circuler, être discutée, reprise, adaptée, améliorée et transmise.
-      </p>
-      <div class="hero-actions">
-        <a class="button" href="licences.html">Comprendre les licences</a>
-        <a class="button secondary" href="modeles.html">Voir les modèles copiables</a>
+    <header class="app-header">
+      <div class="shell header-grid">
+        <a class="brand" href="https://jedi-openlab.github.io/jedi/" aria-label="Retour à JEDI-OpenLab">
+          <img src="https://jedi-openlab.github.io/jedi/PIX/jedi-openlab.png" alt="JEDI-OpenLab" width="52" height="52">
+          <span>
+            <strong>JEDI-OpenLab</strong>
+            <small>Alignement pédagogique</small>
+          </span>
+        </a>
+        <nav class="top-nav" aria-label="Navigation principale">
+          <a href="#objectifs">Objectifs</a>
+          <a href="#bloom">Bloom</a>
+          <a href="#alignement">Alignement</a>
+          <a href="#atelier">Atelier</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section class="notice" aria-labelledby="objectif">
-      <h2 id="objectif">À quoi sert ce kit ?</h2>
-      <p>
-        Open Course Kit aide à passer d’un fichier isolé ou d’un dossier de travail à une ressource pédagogique ouverte, documentée
-        et réutilisable. Il ne s’agit pas seulement de “mettre en ligne” un contenu : il faut aussi clarifier les droits, choisir une licence,
-        signaler les sources, proposer des formats modifiables, structurer les fichiers et rendre la ressource compréhensible hors contexte.
-      </p>
-    </section>
+    <main id="contenu">
+      <section class="workbench" aria-labelledby="titre-app">
+        <div class="shell workbench-grid">
+          <div class="workbench-copy">
+            <p class="kicker">Application web de conception pédagogique</p>
+            <h1 id="titre-app">Align-o-matic</h1>
+            <p class="lead">
+              Un atelier pour formuler des objectifs pédagogiques observables, choisir le bon niveau de Bloom,
+              puis vérifier la cohérence entre objectifs, activités, contenus et évaluations.
+            </p>
+            <div class="proof-strip" aria-label="Repères de conception">
+              <span>Objectifs clairs</span>
+              <span>Verbes observables</span>
+              <span>Évaluation critériée</span>
+              <span>Syllabus explicite</span>
+            </div>
+          </div>
 
-    <section aria-labelledby="rel-definition">
-      <h2 id="rel-definition">Les REL, c’est quoi ?</h2>
-      <p>
-        Les ressources éducatives libres, ou REL, sont des matériaux d’enseignement, d’apprentissage ou de recherche que l’on peut consulter,
-        utiliser, adapter et redistribuer gratuitement, parce qu’ils appartiennent au domaine public ou parce qu’ils sont publiés sous une
-        licence ouverte.
-      </p>
-      <p>
-        L’UNESCO définit aujourd’hui les REL comme des ressources d’apprentissage, d’enseignement et de recherche, dans tout format et sur
-        tout support, relevant du domaine public ou publiées sous une licence ouverte autorisant l’accès sans coût, la réutilisation, la
-        réaffectation, l’adaptation et la redistribution par d’autres.
-      </p>
+          <section class="generator-panel" aria-labelledby="generateur-titre">
+            <div class="panel-heading">
+              <div>
+                <p class="kicker">Générateur rapide</p>
+                <div class="heading-with-help">
+                  <h2 id="generateur-titre">Rédiger un objectif</h2>
+                  <button
+                    class="help-button"
+                    type="button"
+                    aria-label="Aide : rédiger un objectif"
+                    data-help-title="Rédiger un objectif"
+                    data-help-body="Utilisez ce générateur comme un brouillon : choisissez le niveau de complexité, puis ajustez le verbe, l'objet et le contexte jusqu'à obtenir une phrase observable, enseignable et évaluable."
+                  >?</button>
+                </div>
+              </div>
+            </div>
+            <form class="objective-form" aria-describedby="generateur-aide">
+              <div class="field">
+                <div class="field-label-row">
+                  <label for="levelSelect">Niveau de Bloom</label>
+                  <button
+                    class="help-button"
+                    type="button"
+                    aria-label="Aide : niveau de Bloom"
+                    data-help-title="Niveau de Bloom"
+                    data-help-body="Le niveau de Bloom indique la complexité cognitive attendue. Il évite de demander aux étudiants de créer, analyser ou évaluer si les activités ne les ont entraînés qu'à mémoriser."
+                  >?</button>
+                </div>
+                <select id="levelSelect"></select>
+              </div>
+              <div class="field">
+                <div class="field-label-row">
+                  <label for="verbSelect">Verbe d'action</label>
+                  <button
+                    class="help-button"
+                    type="button"
+                    aria-label="Aide : verbe d'action"
+                    data-help-title="Verbe d'action"
+                    data-help-body="Un bon verbe décrit une action observable : expliquer, appliquer, analyser, justifier, concevoir. Les verbes trop vagues comme savoir ou comprendre doivent souvent être précisés."
+                  >?</button>
+                </div>
+                <select id="verbSelect"></select>
+              </div>
+              <div class="field full">
+                <div class="field-label-row">
+                  <label for="objectInput">Objet d'apprentissage</label>
+                  <button
+                    class="help-button"
+                    type="button"
+                    aria-label="Aide : objet d'apprentissage"
+                    data-help-title="Objet d'apprentissage"
+                    data-help-body="L'objet précise ce sur quoi porte l'action : une notion, une méthode, une situation, une production, une compétence ou un geste professionnel."
+                  >?</button>
+                </div>
+                <input id="objectInput" type="text" value="un dispositif d'évaluation critériée">
+              </div>
+              <div class="field full">
+                <div class="field-label-row">
+                  <label for="contextInput">Contexte, condition ou critère</label>
+                  <button
+                    class="help-button"
+                    type="button"
+                    aria-label="Aide : contexte, condition ou critère"
+                    data-help-title="Contexte, condition ou critère"
+                    data-help-body="Le contexte rend l'objectif plus évaluable : documents disponibles, niveau d'autonomie, type de cas, durée, critères de qualité ou contraintes professionnelles."
+                  >?</button>
+                </div>
+                <textarea id="contextInput" rows="3">à partir d'un objectif donné, avec au moins trois critères observables</textarea>
+              </div>
+              <p id="generateur-aide" class="helper">
+                Structure utilisée : à la fin de la séquence, les étudiants seront en mesure de
+                <span>verbe + objet + contexte</span>.
+              </p>
+            </form>
+            <output class="objective-output" id="objectiveOutput"></output>
+            <div class="button-row">
+              <button class="button primary" type="button" id="copyObjective">Copier</button>
+              <a class="button ghost" href="#audit">Auditer l'alignement</a>
+            </div>
+          </section>
+        </div>
+      </section>
 
-      <div class="cards three-columns">
-        <article class="card">
-          <h3>Accéder</h3>
-          <p>
-            Une REL doit pouvoir être consultée sans barrière financière directe, dans des conditions d’accès aussi simples que possible.
-          </p>
-        </article>
+      <section id="objectifs" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Fondamentaux</p>
+            <div class="heading-with-help">
+              <h2>Ce qu'est un objectif pédagogique</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : objectif pédagogique"
+                data-help-title="Objectif pédagogique"
+                data-help-body="Un objectif pédagogique formule un résultat attendu du côté étudiant. Il ne décrit pas seulement ce que l'enseignant va faire, mais ce que l'étudiant pourra produire, expliquer, décider ou réaliser."
+              >?</button>
+            </div>
+            <p>
+              Un objectif pédagogique, ou objectif d'apprentissage, décrit ce que les étudiants devront
+              savoir faire à l'issue d'une séance, d'un module, d'un semestre ou d'un programme.
+              Il sert de boussole pour l'enseignant, de repère pour les étudiants et de point d'ancrage
+              pour l'évaluation.
+            </p>
+          </div>
 
-        <article class="card">
-          <h3>Adapter</h3>
-          <p>
-            Une REL peut être modifiée, traduite, complétée, contextualisée ou transformée pour répondre à d’autres besoins pédagogiques.
-          </p>
-        </article>
+          <div class="definition-grid">
+            <article class="info-card">
+              <h3>Définition courte</h3>
+              <p>
+                Un objectif d'apprentissage exprime une action réalisée par l'étudiant. Cette action mobilise
+                un contenu ou une compétence, à un niveau de complexité donné, dans un contexte suffisamment
+                explicite pour être enseignable et évaluable.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Rôle dans le cours</h3>
+              <p>
+                Il guide le choix des contenus, des activités, des supports, des outils et des évaluations.
+                Il rend visible le chemin d'apprentissage et aide les étudiants à comprendre pourquoi on leur
+                demande telle activité ou telle production.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Ce que ce n'est pas</h3>
+              <p>
+                Ce n'est pas seulement un thème de cours, une intention d'enseignant, une liste de chapitres
+                ou une activité à réaliser. "Faire un exposé" est une tâche. "Argumenter une position à partir
+                de sources fiables" est un objectif.
+              </p>
+            </article>
+          </div>
 
-        <article class="card">
-          <h3>Redistribuer</h3>
-          <p>
-            Une REL peut être partagée à nouveau, seule ou intégrée dans une autre ressource, dans le respect de sa licence et des droits tiers.
-          </p>
-        </article>
+          <div class="wide-note">
+            <h3>La formule utile</h3>
+            <p class="formula">
+              À la fin de <span>la séquence</span>, les étudiants seront capables de
+              <span>verbe observable</span> <span>objet d'apprentissage</span>
+              <span>dans un contexte donné</span> <span>selon des critères explicites</span>.
+            </p>
+          </div>
+
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <caption>Distinguer les notions qui se ressemblent</caption>
+              <thead>
+                <tr>
+                  <th>Élément</th>
+                  <th>Question à laquelle il répond</th>
+                  <th>Exemple</th>
+                  <th>Risque si on le confond avec un objectif</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Contenu</td>
+                  <td>De quoi parle le cours ?</td>
+                  <td>La taxonomie de Bloom</td>
+                  <td>Le cours devient une liste de notions sans performance attendue.</td>
+                </tr>
+                <tr>
+                  <td>Activité</td>
+                  <td>Que font les étudiants pour apprendre ?</td>
+                  <td>Analyser une étude de cas en binôme</td>
+                  <td>On choisit une méthode séduisante sans vérifier ce qu'elle fait apprendre.</td>
+                </tr>
+                <tr>
+                  <td>Objectif</td>
+                  <td>Que devront-ils être capables de faire ?</td>
+                  <td>Analyser les causes d'un défaut d'alignement dans une UE</td>
+                  <td>Sans objectif, l'activité et l'évaluation perdent leur point de référence.</td>
+                </tr>
+                <tr>
+                  <td>Évaluation</td>
+                  <td>Comment vérifie-t-on l'atteinte de l'objectif ?</td>
+                  <td>Diagnostic argumenté d'un syllabus</td>
+                  <td>On mesure autre chose que ce qui a été annoncé ou travaillé.</td>
+                </tr>
+                <tr>
+                  <td>Critère</td>
+                  <td>À quelle qualité reconnaît-on une performance satisfaisante ?</td>
+                  <td>Pertinence, cohérence, justification, clarté</td>
+                  <td>L'évaluation devient vague, variable et peu utile pour progresser.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="redaction" class="section-band pale">
+        <div class="shell split-layout">
+          <div class="section-heading sticky-heading">
+            <p class="kicker">Méthode</p>
+            <div class="heading-with-help">
+              <h2>Rédiger un objectif robuste</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : objectif robuste"
+                data-help-title="Objectif robuste"
+                data-help-body="Un objectif robuste passe le test des trois questions : l'étudiant comprend-il ce qui est attendu, l'enseignant peut-il l'entraîner, et l'évaluation peut-elle l'observer sans ambiguïté ?"
+              >?</button>
+            </div>
+            <p>
+              Les documents locaux convergent vers une logique simple : partir du point de vue de l'étudiant,
+              choisir un verbe d'action observable, nommer le contenu ou la compétence, puis préciser le contexte
+              et les critères qui permettront d'évaluer la performance.
+            </p>
+          </div>
+
+          <div class="step-stack">
+            <article class="process-step">
+              <span class="step-number">01</span>
+              <div>
+                <h3>Nommer la cible d'apprentissage</h3>
+                <p>
+                  Demandez-vous ce qui doit être transformé chez l'étudiant : connaissance, compréhension,
+                  méthode, habileté, jugement critique, posture, savoir-faire professionnel. La cible doit être
+                  importante pour la suite du parcours et pas seulement pratique à enseigner.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">02</span>
+              <div>
+                <h3>Choisir un niveau de complexité</h3>
+                <p>
+                  Situez l'objectif dans Bloom : connaître, comprendre, appliquer, analyser, évaluer ou créer.
+                  Ce choix évite de demander une évaluation de haut niveau après des activités limitées à la
+                  mémorisation.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">03</span>
+              <div>
+                <h3>Utiliser un verbe observable</h3>
+                <p>
+                  Préférez "expliquer", "justifier", "classer", "modéliser", "produire", "défendre" à des verbes
+                  trop généraux comme "savoir", "comprendre" ou "connaître" lorsqu'ils ne disent pas ce qui sera
+                  observé.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">04</span>
+              <div>
+                <h3>Ajouter le contenu ou la compétence</h3>
+                <p>
+                  Le verbe seul ne suffit pas. "Analyser" quoi ? "Concevoir" quoi ? Le contenu rend l'objectif
+                  spécifique et permet d'éviter les formulations interchangeables.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">05</span>
+              <div>
+                <h3>Préciser le contexte</h3>
+                <p>
+                  Indiquez les conditions de réalisation : seul ou en groupe, avec quels documents, dans quel
+                  temps, sur quel type de cas, avec quel niveau d'autonomie, avec quels outils ou ressources.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">06</span>
+              <div>
+                <h3>Prévoir les critères de réussite</h3>
+                <p>
+                  Les critères transforment l'objectif en repère évaluable. Ils peuvent porter sur la pertinence,
+                  la cohérence, la rigueur, la justification, l'efficience, la qualité de la production ou la capacité
+                  à transférer dans un contexte nouveau.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">07</span>
+              <div>
+                <h3>Tester la phrase</h3>
+                <p>
+                  Relisez l'objectif avec trois questions : peut-on l'enseigner par des activités concrètes ?
+                  peut-on l'évaluer sans deviner ? l'étudiant comprend-il ce qui est attendu ?
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bloom" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Taxonomie</p>
+            <div class="heading-with-help">
+              <h2>La taxonomie de Bloom révisée</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : taxonomie de Bloom"
+                data-help-title="Taxonomie de Bloom"
+                data-help-body="Bloom sert ici de repère de progression : mémoriser, comprendre, appliquer, analyser, évaluer, créer. Le plus important n'est pas l'étiquette, mais la cohérence entre le niveau visé, les activités et l'évaluation."
+              >?</button>
+            </div>
+            <p>
+              Bloom classe les objectifs cognitifs par niveaux de complexité. En conception pédagogique,
+              elle aide à choisir des verbes d'action, à expliciter le niveau d'apprentissage visé et à éviter
+              les ruptures entre activités et évaluations.
+            </p>
+          </div>
+
+          <div class="bloom-controls" role="group" aria-label="Filtrer les niveaux de Bloom">
+            <button class="filter-button active" type="button" data-filter="all">Tous</button>
+            <button class="filter-button" type="button" data-filter="surface">Surface</button>
+            <button class="filter-button" type="button" data-filter="intermediaire">Intermédiaire</button>
+            <button class="filter-button" type="button" data-filter="profondeur">Profondeur</button>
+          </div>
+
+          <div class="bloom-grid" id="bloomGrid"></div>
+
+          <div class="domain-panel">
+            <h3>Ne pas limiter les objectifs au cognitif</h3>
+            <p>
+              Les apprentissages peuvent relever du savoir, du savoir-faire et du savoir-être. L'alignement
+              doit donc tenir compte des domaines cognitif, psychomoteur et socio-affectif.
+            </p>
+            <div class="domain-grid">
+              <article>
+                <h4>Cognitif</h4>
+                <p>Connaissances, compréhension, raisonnement, analyse, jugement, création.</p>
+                <small>Exemples : identifier, expliquer, appliquer, analyser, justifier, concevoir.</small>
+              </article>
+              <article>
+                <h4>Psychomoteur</h4>
+                <p>Perception, reproduction, geste technique, performance, perfectionnement.</p>
+                <small>Exemples : observer, reproduire, manipuler, réaliser, adapter.</small>
+              </article>
+              <article>
+                <h4>Socio-affectif</h4>
+                <p>Réception, valorisation, adoption de principes, attitudes et responsabilités.</p>
+                <small>Exemples : participer, choisir, prendre position, mettre en pratique.</small>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="alignement" class="section-band ink">
+        <div class="shell">
+          <div class="section-heading light">
+            <p class="kicker">Cohérence</p>
+            <div class="heading-with-help">
+              <h2>L'alignement pédagogique</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : alignement pédagogique"
+                data-help-title="Alignement pédagogique"
+                data-help-body="L'alignement vérifie que l'on annonce, entraîne et évalue la même chose. Quand il est clair, les étudiants comprennent mieux pourquoi chaque activité existe."
+              >?</button>
+            </div>
+            <p>
+              L'alignement pédagogique est le principe de cohérence entre objectifs d'apprentissage,
+              activités pédagogiques, contenus, outils et stratégies d'évaluation. Il peut servir à concevoir un
+              cours, mais aussi à diagnostiquer ce qui dysfonctionne dans un dispositif existant.
+            </p>
+          </div>
+
+          <div class="alignment-layout">
+            <div class="triangle-diagram" aria-label="Triangle de l'alignement pédagogique">
+              <div class="triangle-line"></div>
+              <div class="triangle-node node-top">
+                <strong>Objectifs</strong>
+                <span>Ce que l'étudiant doit être capable de faire</span>
+              </div>
+              <div class="triangle-node node-left">
+                <strong>Activités</strong>
+                <span>Ce qui lui permet de s'entraîner</span>
+              </div>
+              <div class="triangle-node node-right">
+                <strong>Évaluation</strong>
+                <span>Ce qui vérifie et accompagne l'apprentissage</span>
+              </div>
+              <div class="triangle-center">
+                <strong>Contenus et outils</strong>
+                <span>Au service de l'apprentissage</span>
+              </div>
+            </div>
+
+            <div class="alignment-cards">
+              <article>
+                <h3>Pour les étudiants</h3>
+                <p>
+                  L'alignement rend le sens du travail plus lisible, soutient la motivation, multiplie les occasions
+                  d'activité pertinente et favorise un apprentissage plus profond.
+                </p>
+              </article>
+              <article>
+                <h3>Pour les enseignants</h3>
+                <p>
+                  Il aide à restructurer un cours, anticiper l'évaluation, objectiver les attentes et repérer les
+                  incohérences entre ce qui est annoncé, travaillé et évalué.
+                </p>
+              </article>
+              <article>
+                <h3>Pour les équipes</h3>
+                <p>
+                  À l'échelle d'une UE, d'une année ou d'un programme, il soutient l'approche programme et la
+                  cohérence collective des compétences visées.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="failure-grid" aria-label="Exemples de défauts d'alignement">
+            <article>
+              <span class="tag">Évaluation décalée</span>
+              <h3>On annonce l'analyse critique, puis on évalue par QCM de mémorisation</h3>
+              <p>
+                Les étudiants ont rationnellement intérêt à apprendre par cœur. Les activités de débat ou de
+                travail en groupe perdent leur utilité perçue.
+              </p>
+            </article>
+            <article>
+              <span class="tag">Activités insuffisantes</span>
+              <h3>On évalue une analyse, mais on a surtout dicté des notes</h3>
+              <p>
+                Les étudiants échouent à une tâche qu'ils n'ont jamais eu l'occasion d'exercer, d'obtenir une rétroaction
+                dessus, puis d'améliorer.
+              </p>
+            </article>
+            <article>
+              <span class="tag">Objectif trop bas</span>
+              <h3>On vise "définir", puis on demande une analyse critique</h3>
+              <p>
+                La grille peut être soignée, mais elle évalue autre chose que l'objectif. Il faut changer l'objectif
+                ou changer l'activité et l'évaluation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="atelier" class="section-band pale">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Atelier</p>
+            <div class="heading-with-help">
+              <h2>Passer de l'objectif au dispositif</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : passer de l'objectif au dispositif"
+                data-help-title="Objectif, activités, évaluation"
+                data-help-body="Une activité pertinente fait pratiquer la performance attendue. Une évaluation pertinente permet d'observer cette même performance avec des critères connus."
+              >?</button>
+            </div>
+            <p>
+              Une fois le niveau de Bloom choisi, l'enjeu est de proposer des activités qui entraînent vraiment
+              la performance attendue, puis une évaluation qui observe cette performance avec des critères connus.
+            </p>
+          </div>
+
+          <div class="matrix-grid" id="matrixGrid"></div>
+
+          <div class="evaluation-panel">
+            <div>
+              <div class="heading-with-help compact">
+                <h3>Construire l'évaluation critériée</h3>
+                <button
+                  class="help-button"
+                  type="button"
+                  aria-label="Aide : évaluation critériée"
+                  data-help-title="Évaluation critériée"
+                  data-help-body="Une évaluation critériée explicite les qualités attendues avant la production. Les critères décrivent la qualité, les indicateurs montrent comment on la reconnaît."
+                >?</button>
+              </div>
+              <p>
+                Une grille critériée repose sur un triptyque simple : critère, indicateur, modalité
+                d'observation. Cette logique évite les jugements arbitraires et transforme l'évaluation
+                en outil d'apprentissage.
+              </p>
+            </div>
+            <ol class="criteria-list">
+              <li>
+                <strong>Critère</strong>
+                <span>Dans son action, l'étudiant doit faire preuve de pertinence, cohérence, clarté, rigueur...</span>
+              </li>
+              <li>
+                <strong>Indicateur</strong>
+                <span>Pour indiquer que le critère est atteint, il faut observer un élément concret et partagé.</span>
+              </li>
+              <li>
+                <strong>Observation</strong>
+                <span>Dans la situation d'évaluation, où trouve-t-on cette information : rapport, soutenance, prototype, trace, geste ?</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="audit" class="section-band">
+        <div class="shell audit-layout">
+          <div class="section-heading">
+            <p class="kicker">Diagnostic</p>
+            <div class="heading-with-help">
+              <h2>Checklist d'alignement</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : checklist d'alignement"
+                data-help-title="Checklist d'alignement"
+                data-help-body="La checklist sert à repérer les zones floues. Un score bas n'est pas un échec : c'est une invitation à clarifier les objectifs, l'entraînement ou l'évaluation."
+              >?</button>
+            </div>
+            <p>
+              Cochez les points déjà satisfaits. Le score n'est pas une note : c'est un détecteur de zones à clarifier
+              avant de publier un syllabus, lancer une activité ou construire une évaluation.
+            </p>
+          </div>
+
+          <div class="audit-tool">
+            <div class="score-card" aria-live="polite">
+              <span class="score-value" id="auditScore">0%</span>
+              <span class="score-label" id="auditLabel">Alignement à construire</span>
+              <div class="score-bar"><span id="auditBar"></span></div>
+            </div>
+            <div class="checklist" id="checklist"></div>
+            <button class="button ghost" type="button" id="resetChecklist">Réinitialiser</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="syllabus" class="section-band pale">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Communication</p>
+            <div class="heading-with-help">
+              <h2>Rendre l'alignement visible dans le syllabus</h2>
+              <button
+                class="help-button"
+                type="button"
+                aria-label="Aide : syllabus"
+                data-help-title="Syllabus"
+                data-help-body="Le syllabus est plus utile quand il explique les liens : objectifs visés, activités prévues, productions attendues, modalités d'évaluation et critères de réussite."
+              >?</button>
+            </div>
+            <p>
+              Il est utile d'expliciter l'alignement aux étudiants. Le syllabus n'est pas seulement administratif :
+              c'est un contrat de lisibilité qui relie objectifs, activités, calendrier, évaluations et ressources.
+            </p>
+          </div>
+
+          <div class="syllabus-grid">
+            <article>
+              <h3>Ce qu'il faut annoncer</h3>
+              <ul>
+                <li>Les objectifs et compétences visées.</li>
+                <li>Les prérequis et tests de positionnement éventuels.</li>
+                <li>Les activités d'apprentissage en présence et hors cours.</li>
+                <li>Les productions attendues et leur calendrier.</li>
+                <li>Les modalités d'évaluation formative et sommative.</li>
+                <li>Les critères de réussite et les ressources utiles.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Ce qu'il faut expliquer</h3>
+              <ul>
+                <li>Pourquoi telle activité prépare tel objectif.</li>
+                <li>Pourquoi telle évaluation observe bien la compétence visée.</li>
+                <li>Comment les rétroactions aideront à progresser.</li>
+                <li>Comment les étudiants peuvent se situer avant l'évaluation finale.</li>
+                <li>Quels choix ont été faits pour prioriser les contenus.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Ce qu'il faut éviter</h3>
+              <ul>
+                <li>Des objectifs absents ou formulés uniquement comme des chapitres.</li>
+                <li>Une évaluation surprise qui mesure une performance jamais entraînée.</li>
+                <li>Des critères implicites connus seulement par le correcteur.</li>
+                <li>Des outils numériques ajoutés sans lien avec l'objectif.</li>
+                <li>Un syllabus publié puis jamais réutilisé en cours.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer-shell">
+      <div class="shell footer-grid">
+        <span class="footer-text"><i class="fa-solid fa-flask footer-icon" aria-hidden="true"></i><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
+        <span class="footer-version">Version éditoriale 2026-05-22.1</span>
       </div>
-    </section>
+    </footer>
 
-    <section aria-labelledby="origine-rel">
-      <h2 id="origine-rel">D’où viennent les REL ?</h2>
-      <p>
-        Les REL émergent avec le développement du numérique et d’Internet, qui transforment les conditions de production, d’accès,
-        de partage et de transmission des savoirs. L’expression “ressources éducatives libres” est adoptée en 2002 lors du premier
-        Forum mondial organisé par l’UNESCO autour des didacticiels libres.
-      </p>
-      <p>
-        Plusieurs jalons structurent cette histoire : les premières plateformes de partage entre enseignants, l’initiative OpenCourseWare
-        du MIT en 2001, l’association Sésamath en France, les universités numériques thématiques, la Déclaration de Paris de l’UNESCO en 2012,
-        puis la Recommandation de l’UNESCO sur les REL adoptée en 2019.
-      </p>
+    <div class="context-help" id="contextHelp" hidden>
+      <section class="context-help-box" role="dialog" aria-labelledby="contextHelpTitle" aria-describedby="contextHelpBody">
+        <button class="context-help-close" type="button" aria-label="Fermer l'aide">×</button>
+        <p class="kicker">Aide contextuelle</p>
+        <h2 id="contextHelpTitle">Aide</h2>
+        <p id="contextHelpBody"></p>
+      </section>
+    </div>
 
-      <div class="timeline">
-        <article class="timeline-item">
-          <span class="timeline-date">1995</span>
-          <h3>Digischool</h3>
-          <p>Une initiative néerlandaise de partage de ressources et de classes virtuelles entre enseignants.</p>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-date">2001</span>
-          <h3>MIT OpenCourseWare et Sésamath</h3>
-          <p>Le MIT publie gratuitement une large partie de ses cours. En France, Sésamath développe des ressources libres en mathématiques.</p>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-date">2002</span>
-          <h3>UNESCO</h3>
-          <p>L’expression “ressources éducatives libres” est adoptée lors d’un forum mondial organisé par l’UNESCO.</p>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-date">2012</span>
-          <h3>Déclaration de Paris</h3>
-          <p>L’UNESCO recommande notamment de soutenir les politiques REL et d’encourager les licences ouvertes pour les ressources produites sur fonds publics.</p>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-date">2019</span>
-          <h3>Recommandation UNESCO</h3>
-          <p>L’UNESCO adopte un instrument normatif international consacré aux REL, à leur développement et à leur usage.</p>
-        </article>
-      </div>
-    </section>
-
-    <section aria-labelledby="analyse-boyer">
-      <h2 id="analyse-boyer">Ce que l’histoire des REL nous apprend</h2>
-      <p>
-        Dans “Une brève histoire des ressources éducatives libres”, Anne Boyer rappelle que les REL ne sont pas seulement des fichiers
-        disponibles en ligne. Elles forment un mouvement pédagogique, technique, institutionnel et juridique né avec le numérique. L’article
-        montre aussi que les REL couvrent une grande variété d’objets : cours complets, documents PDF, vidéos, simulations, études de cas,
-        banques d’exercices, serious games, activités de classe ou ressources plus fines comme des schémas et des images.
-      </p>
-
-      <div class="cards two-columns">
-        <article class="card">
-          <h3>Les promesses</h3>
-          <p>
-            Les REL facilitent l’accès à l’apprentissage, la diffusion à grande échelle, la mutualisation des ressources, la diversité des
-            approches pédagogiques, l’innovation et l’éducation informelle. Elles peuvent aussi renforcer la visibilité des institutions
-            qui produisent et partagent leurs ressources.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Les conditions de réussite</h3>
-          <p>
-            L’article insiste sur la nécessité de ressources faciles à trouver, techniquement réutilisables, pédagogiquement contextualisées
-            et juridiquement claires. Les enseignants ont besoin de scénarios, d’exemples d’usage et de préconisations, pas seulement de fichiers.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Les points de vigilance</h3>
-          <p>
-            La qualité, les barrières linguistiques et culturelles, les difficultés d’accès technologique, le droit d’auteur, la propriété
-            intellectuelle, la pérennité et le modèle économique restent des enjeux centraux. Une REL mal documentée ou jamais maintenue perd rapidement
-            une partie de sa valeur.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Le rôle des enseignants</h3>
-          <p>
-            Les REL ne remplacent pas l’enseignant. Elles déplacent son rôle vers la sélection, la contextualisation, l’animation,
-            l’accompagnement, la mise en activité et l’aide à la construction des connaissances.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section aria-labelledby="position-kit">
-      <h2 id="position-kit">La position d’Open Course Kit</h2>
-      <p>
-        Open Course Kit part d’un constat : la difficulté n’est pas seulement de produire des ressources, mais de les rendre vraiment réutilisables.
-        Une ressource ouverte doit être accompagnée d’un contexte, d’une licence, de sources, de fichiers modifiables, de scénarios d’usage,
-        d’une attention à l’accessibilité et d’une stratégie minimale de maintenance.
-      </p>
-      <p>
-        Le kit propose donc une approche très concrète : préparer la ressource, choisir une licence, structurer un dépôt, publier avec GitHub Pages,
-        améliorer l’accessibilité et fournir des modèles copiables. Sa fonction est d’aider à franchir le dernier kilomètre entre l’intention d’ouverture
-        et une publication réellement exploitable.
-      </p>
-    </section>
-
-    <section aria-labelledby="parcours">
-      <h2 id="parcours">Parcours conseillé</h2>
-      <div class="steps">
-        <article class="step">
-          <span class="step-number">1</span>
-          <h3>Comprendre les licences</h3>
-          <p>Identifier ce que l’on peut ouvrir, choisir une licence adaptée et signaler les droits tiers.</p>
-          <a href="licences.html">Aller à la page Licences</a>
-        </article>
-
-        <article class="step">
-          <span class="step-number">2</span>
-          <h3>Préparer la ressource</h3>
-          <p>Faire l’inventaire, nettoyer les fichiers, anonymiser si nécessaire et documenter le contexte d’usage.</p>
-          <a href="preparer.html">Aller à la page Préparer</a>
-        </article>
-
-        <article class="step">
-          <span class="step-number">3</span>
-          <h3>Structurer le dépôt</h3>
-          <p>Organiser les fichiers, rédiger un README, ajouter une licence et publier avec GitHub Pages.</p>
-          <a href="github.html">Aller à la page GitHub</a>
-        </article>
-
-        <article class="step">
-          <span class="step-number">4</span>
-          <h3>Rendre réutilisable</h3>
-          <p>Améliorer l’accessibilité, fournir des formats sources et utiliser les modèles copiables.</p>
-          <a href="accessibilite.html">Aller à la page Accessibilité</a>
-        </article>
-      </div>
-    </section>
-
-    <section aria-labelledby="licence-projet" class="notice success">
-      <h2 id="licence-projet">Licence du projet</h2>
-      <p>
-        Open Course Kit est distribué sous
-        <a href="LICENSE">licence MIT</a>. Les marques, logiciels, services tiers,
-        documents sources importés et ressources citées restent soumis à leurs licences et droits respectifs.
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
+    <script src="assets/app.js?v=2026-05-23.2"></script>
+  </body>
 </html>
