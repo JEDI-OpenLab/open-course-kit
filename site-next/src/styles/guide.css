@@ -17,13 +17,40 @@
 .menu-toggle:hover{color:var(--accent-ink);border-color:var(--accent)}
 .menu-toggle svg{display:block}
 
-@media (max-width:900px){
-  .nav{flex-wrap:wrap;row-gap:.5rem}
+/* Desktop large (conteneur à pleine largeur 1140px) : resserrer la barre
+   pour que les 9 entrées tiennent sur une seule ligne sans césure. */
+@media (min-width:1201px){
+  .site-header .brand{white-space:nowrap}
+  .nav{gap:1rem}
+  .nav-links{gap:.1rem}
+  .nav-links .nav-link{white-space:nowrap;padding:.5em .6em;font-size:.93rem}
+}
+
+@media (max-width:1200px){
+  .nav{position:relative}
   .nav-actions{margin-left:auto}
   .menu-toggle{display:inline-grid}
-  .nav-links{display:none;order:3;flex-basis:100%;flex-direction:column;align-items:stretch;gap:.1rem;margin:0;padding-top:.6rem;border-top:1px solid var(--line)}
+  /* Menu déroulant mobile : panneau plein, OPAQUE, sous la barre.
+     Positionné en absolu → ne dépend plus de la hauteur fixe (64px) de .nav,
+     donc plus de liens transparents qui débordent par-dessus le contenu. */
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;left:0;right:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:.12rem;
+    margin:0;
+    padding:.5rem 24px .85rem;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 20px 38px -18px rgba(20,30,30,.5);
+    max-height:calc(100dvh - 64px);
+    overflow-y:auto;
+  }
   .nav-links.is-open{display:flex}
-  .nav-links .nav-link{padding:.75em .7em;border-radius:8px}
+  .nav-links .nav-link{padding:.85em .8em;border-radius:9px;font-size:1rem}
+  .nav-link.nav-gh,.nav-link.nav-ext{display:flex;justify-content:flex-start}
 }
 
 /* Conteneur de lecture */
