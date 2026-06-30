@@ -1,20 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>Modèles et checklists — Open Course Kit</title>
-  <meta name="description" content="Modèles copiables pour publier une ressource pédagogique ouverte : README, licence, crédits, fiche ressource, citation, checklists et structure de dépôt." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
-
-  <main>
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Modèles et checklists" description="Modèles copiables pour publier une ressource pédagogique ouverte : README, licence, crédits, fiche ressource, citation, checklists et structure de dépôt.">
+  <div class="guide">
     <section class="hero">
       <p class="eyebrow">Modèles et checklists</p>
       <h1>Des blocs prêts à copier pour publier une ressource ouverte</h1>
@@ -540,9 +528,5 @@ url: "[URL de la ressource]"</code></pre>
         homogénéiser les dépôts et rendre les ressources plus faciles à reprendre. Le bon modèle est celui que l’on adapte proprement.
       </p>
     </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
-</html>
+  </div>
+</Base>

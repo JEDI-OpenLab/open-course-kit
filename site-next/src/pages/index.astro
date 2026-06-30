@@ -1,20 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>Open Course Kit — Publier des ressources pédagogiques ouvertes</title>
-  <meta name="description" content="Open Course Kit est un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
-
-  <main>
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Publier des ressources pédagogiques ouvertes" description="Open Course Kit est un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes.">
+  <div class="guide">
     <section class="hero">
       <p class="eyebrow">Ressources éducatives libres</p>
       <h1>Publier des ressources pédagogiques ouvertes, réutilisables et documentées</h1>
@@ -28,8 +16,8 @@
         lorsqu’elle peut circuler, être discutée, reprise, adaptée, améliorée et transmise.
       </p>
       <div class="hero-actions">
-        <a class="button" href="licences.html">Comprendre les licences</a>
-        <a class="button secondary" href="modeles.html">Voir les modèles copiables</a>
+        <a class="button" href="/open-course-kit/licences">Comprendre les licences</a>
+        <a class="button secondary" href="/open-course-kit/modeles">Voir les modèles copiables</a>
       </div>
     </section>
 
@@ -192,28 +180,28 @@
           <span class="step-number">1</span>
           <h3>Comprendre les licences</h3>
           <p>Identifier ce que l’on peut ouvrir, choisir une licence adaptée et signaler les droits tiers.</p>
-          <a href="licences.html">Aller à la page Licences</a>
+          <a href="/open-course-kit/licences">Aller à la page Licences</a>
         </article>
 
         <article class="step">
           <span class="step-number">2</span>
           <h3>Préparer la ressource</h3>
           <p>Faire l’inventaire, nettoyer les fichiers, anonymiser si nécessaire et documenter le contexte d’usage.</p>
-          <a href="preparer.html">Aller à la page Préparer</a>
+          <a href="/open-course-kit/preparer">Aller à la page Préparer</a>
         </article>
 
         <article class="step">
           <span class="step-number">3</span>
           <h3>Structurer le dépôt</h3>
           <p>Organiser les fichiers, rédiger un README, ajouter une licence et publier avec GitHub Pages.</p>
-          <a href="github.html">Aller à la page GitHub</a>
+          <a href="/open-course-kit/github">Aller à la page GitHub</a>
         </article>
 
         <article class="step">
           <span class="step-number">4</span>
           <h3>Rendre réutilisable</h3>
           <p>Améliorer l’accessibilité, fournir des formats sources et utiliser les modèles copiables.</p>
-          <a href="accessibilite.html">Aller à la page Accessibilité</a>
+          <a href="/open-course-kit/accessibilite">Aller à la page Accessibilité</a>
         </article>
       </div>
     </section>
@@ -227,9 +215,5 @@
         Les contenus tiers conservent leurs droits et licences propres. Voir le site principal de JEDI-OpenLab pour plus d’informations.
       </p>
     </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
-</html>
+  </div>
+</Base>

@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>À propos — Open Course Kit</title>
-  <meta name="description" content="Présentation d’Open Course Kit, ressource JEDI-OpenLab pour publier des ressources pédagogiques ouvertes, documentées et réutilisables." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
-
-  <main id="contenu">
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="À propos" description="Présentation d’Open Course Kit, ressource JEDI-OpenLab pour publier des ressources pédagogiques ouvertes, documentées et réutilisables.">
+  <div class="guide">
     <section class="hero">
       <p class="eyebrow">À propos</p>
       <h1>Un kit pour mieux publier les ressources pédagogiques ouvertes</h1>
@@ -94,9 +84,5 @@
         <li>Anne Boyer, “Une brève histoire des ressources éducatives libres”, document intégré au kit.</li>
       </ul>
     </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
-</html>
+  </div>
+</Base>

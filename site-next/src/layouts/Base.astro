@@ -1,0 +1,271 @@
+---
+import '../styles/atelier.css';
+import '../styles/guide.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title = 'Open Course Kit',
+  description = 'Open Course Kit — un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes.',
+} = Astro.props;
+
+const titleFull = title === 'Open Course Kit'
+  ? 'Open Course Kit — Publier des ressources pédagogiques ouvertes'
+  : `${title} · Open Course Kit`;
+
+const SITE_VERSION = '2026-06-26.1';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const ogImage = 'https://jedi-openlab.github.io/open-course-kit/PIX/jedi-openlab-social-2026.png';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titleFull}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}PIX/jedi-favicon-32-2026.png`} />
+    <link rel="apple-touch-icon" href={`${base}PIX/jedi-favicon-180-2026.png`} />
+    <meta property="og:title" content={titleFull} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {/* Thème appliqué avant le 1er rendu (anti-flash) */}
+    <script is:inline>
+      (function () {
+        try {
+          var pref = localStorage.getItem('ock_theme') || 'auto';
+          var dark = pref === 'dark' ||
+            (pref === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var d = document.documentElement;
+          d.dataset.theme = dark ? 'dark' : 'light';
+          d.dataset.themePref = pref;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer version={SITE_VERSION} />
+
+    <script>
+      // Outils interactifs du guide (repris fidèlement de l'app.js d'origine).
+      // Chaque outil est injecté à son ancre, qui n'existe que sur la page concernée.
+      (() => {
+        const getValue = (form, name) => { const f = form.elements[name]; return f ? String(f.value || '').trim() : ''; };
+        const getRadio = (form, name) => { const f = form.querySelector(`input[name="${name}"]:checked`); return f ? f.value : ''; };
+
+        const enhanceCopyBlocks = () => {
+          document.querySelectorAll('.copy-block pre').forEach((pre) => {
+            const block = pre.closest('.copy-block');
+            if (!block || block.querySelector('.copy-button')) return;
+            const button = document.createElement('button');
+            button.type = 'button'; button.className = 'copy-button'; button.textContent = 'Copier';
+            button.addEventListener('click', async () => {
+              const text = pre.textContent.trim();
+              try { await navigator.clipboard.writeText(text); }
+              catch { const ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.left = '-9999px'; document.body.append(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+              const prev = button.textContent; button.textContent = 'Copié'; setTimeout(() => { button.textContent = prev; }, 1600);
+            });
+            block.prepend(button);
+          });
+        };
+        const enhanceTables = () => {
+          document.querySelectorAll('.table-wrapper').forEach((w) => { w.setAttribute('tabindex', '0'); if (!w.hasAttribute('aria-label')) w.setAttribute('aria-label', 'Tableau défilable horizontalement'); });
+        };
+
+        const renderHomeDashboard = () => {
+          const path = location.pathname.replace(/\/$/, '');
+          const isHome = path.endsWith('/open-course-kit') || path.endsWith('/open-course-kit/index') || path.endsWith('/open-course-kit/index.html');
+          const hero = document.querySelector('.hero');
+          if (!isHome || !hero || document.querySelector('#demarrer')) return;
+          hero.insertAdjacentHTML('afterend', `
+            <section class="tool-section" id="demarrer" aria-labelledby="demarrer-title">
+              <div class="tool-inner">
+                <p class="kicker">Parcours rapide</p>
+                <h2 id="demarrer-title">Partir d'une ressource et arriver à une publication réutilisable</h2>
+                <p>Open Course Kit propose un chemin simple : vérifier ce qui peut être partagé, choisir une licence, préparer les fichiers, documenter le contexte, puis publier proprement.</p>
+                <div class="dashboard-grid">
+                  <div class="cards two-columns">
+                    <article class="card"><h3>1. Clarifier les droits</h3><p>Identifier les contenus originaux, les contenus tiers, les données personnelles et les éléments à retirer.</p><a href="/open-course-kit/preparer">Préparer la ressource</a></article>
+                    <article class="card"><h3>2. Choisir une licence</h3><p>Comprendre les différences entre CC0, CC BY, CC BY-SA et les clauses plus restrictives.</p><a href="/open-course-kit/licences">Comparer les licences</a></article>
+                    <article class="card"><h3>3. Structurer le dépôt</h3><p>Mettre en place un README, une licence, des crédits, des sources et une documentation lisible.</p><a href="/open-course-kit/github">Structurer sur GitHub</a></article>
+                    <article class="card"><h3>4. Faciliter la reprise</h3><p>Améliorer la lisibilité, fournir les formats sources et rendre les consignes compréhensibles hors contexte.</p><a href="/open-course-kit/accessibilite">Améliorer l'accessibilité</a></article>
+                  </div>
+                  <aside class="result-panel">
+                    <h3>Ce que vous pouvez produire avec le kit</h3>
+                    <ul class="checklist">
+                      <li>Une mention de licence claire.</li>
+                      <li>Un README adapté à une ressource pédagogique.</li>
+                      <li>Une fiche ressource réutilisable.</li>
+                      <li>Une checklist avant publication.</li>
+                      <li>Une structure de dépôt prête pour GitHub Pages.</li>
+                    </ul>
+                    <a class="button ghost" href="/open-course-kit/modeles">Ouvrir les modèles</a>
+                  </aside>
+                </div>
+              </div>
+            </section>`);
+        };
+
+        const renderLicenseHelper = () => {
+          const section = document.querySelector('#prudence-juridique')?.closest('section');
+          if (!section || document.querySelector('#assistant-licence')) return;
+          section.insertAdjacentHTML('afterend', `
+            <section class="tool-section" id="assistant-licence" aria-labelledby="assistant-licence-title">
+              <div class="tool-inner">
+                <p class="kicker">Assistant express</p>
+                <h2 id="assistant-licence-title">Obtenir une première orientation de licence</h2>
+                <p>Répondez à quelques questions pour obtenir une piste. Le résultat reste indicatif : il faut toujours vérifier les droits des contenus tiers et les règles applicables à votre contexte.</p>
+                <div class="tool-grid">
+                  <form class="tool-panel" id="license-form">
+                    <fieldset><legend>La ressource contient-elle des contenus tiers à republier ?</legend><div class="choice-list">
+                      <label><input type="radio" name="tiers" value="no" checked> Non, elle est essentiellement originale.</label>
+                      <label><input type="radio" name="tiers" value="yes"> Oui, elle contient des images, extraits, données ou médias de tiers.</label>
+                    </div></fieldset>
+                    <fieldset><legend>Souhaitez-vous autoriser les adaptations ?</legend><div class="choice-list">
+                      <label><input type="radio" name="adapt" value="yes" checked> Oui, la ressource doit pouvoir être modifiée.</label>
+                      <label><input type="radio" name="adapt" value="no"> Non, je souhaite éviter les modifications.</label>
+                    </div></fieldset>
+                    <fieldset><legend>Quelle condition souhaitez-vous privilégier ?</legend><div class="choice-list">
+                      <label><input type="radio" name="condition" value="open" checked> La réutilisation la plus large possible.</label>
+                      <label><input type="radio" name="condition" value="by"> Une attribution obligatoire.</label>
+                      <label><input type="radio" name="condition" value="sa"> Le partage des adaptations sous la même licence.</label>
+                      <label><input type="radio" name="condition" value="nc"> L'interdiction des usages commerciaux.</label>
+                    </div></fieldset>
+                  </form>
+                  <div class="result-panel" id="license-result" aria-live="polite"></div>
+                </div>
+              </div>
+            </section>`);
+          const form = document.querySelector('#license-form');
+          const result = document.querySelector('#license-result');
+          const update = () => {
+            const tiers = getRadio(form, 'tiers'), adapt = getRadio(form, 'adapt'), condition = getRadio(form, 'condition');
+            let title = 'CC0 1.0 Universal';
+            let body = 'Piste adaptée si vous détenez les droits nécessaires et souhaitez maximiser la circulation, l’adaptation et la republication de la ressource.';
+            if (tiers === 'yes') { title = 'Commencer par un inventaire des droits'; body = 'Avant de choisir une licence globale, signalez les contenus tiers, leurs sources et leurs conditions. La licence ouverte ne couvrira que les contenus que vous avez le droit de licencier.'; }
+            else if (adapt === 'no') { title = 'CC BY-ND, avec prudence'; body = 'Cette option limite les modifications. Elle peut convenir à un document que vous voulez diffuser tel quel, mais elle est généralement peu adaptée aux ressources éducatives libres.'; }
+            else if (condition === 'by') { title = 'CC BY'; body = 'Bon équilibre si vous voulez autoriser les adaptations et les usages larges tout en imposant l’attribution.'; }
+            else if (condition === 'sa') { title = 'CC BY-SA'; body = 'Option pertinente si vous souhaitez que les adaptations restent dans une logique de partage à l’identique.'; }
+            else if (condition === 'nc') { title = 'CC BY-NC, à manier avec prudence'; body = 'La clause NC peut rassurer, mais elle limite certains usages pédagogiques et la notion d’usage commercial peut être difficile à interpréter.'; }
+            result.innerHTML = `<h3>Orientation proposée : ${title}</h3><p>${body}</p><p><strong>À vérifier :</strong> contenus tiers, données personnelles, contrats, marques, logiciels et règles institutionnelles.</p>`;
+          };
+          form.addEventListener('change', update); update();
+        };
+
+        const renderAuditTool = () => {
+          const section = document.querySelector('#attention')?.closest('section');
+          if (!section || document.querySelector('#audit-ouverture')) return;
+          const items = [
+            'Les auteurs et contributeurs sont identifiés.',
+            'Les contenus originaux et les contenus tiers sont distingués.',
+            'Les droits des images, médias et extraits ont été vérifiés.',
+            'Les données personnelles ou sensibles ont été retirées ou anonymisées.',
+            'Une licence claire est prévue pour les contenus originaux.',
+            'Un README ou une fiche ressource explique le contexte d’usage.',
+            'Des formats sources modifiables sont fournis quand c’est pertinent.',
+            'Les crédits et sources sont regroupés dans une section dédiée.',
+          ];
+          section.insertAdjacentHTML('afterend', `
+            <section class="tool-section" id="audit-ouverture" aria-labelledby="audit-title">
+              <div class="tool-inner">
+                <p class="kicker">Audit express</p>
+                <h2 id="audit-title">Mesurer l'état de préparation avant publication</h2>
+                <p>Cochez les points déjà traités. L'objectif n'est pas d'obtenir un score parfait, mais de repérer les actions les plus utiles avant de rendre la ressource publique.</p>
+                <div class="tool-grid">
+                  <form class="tool-panel" id="audit-form"><div class="choice-list">${items.map((item, index) => `<label><input type="checkbox" name="audit" value="${index}"> ${item}</label>`).join('')}</div></form>
+                  <div class="result-panel" id="audit-result" aria-live="polite"><h3>Préparation</h3><div class="score-meter" aria-hidden="true"><span></span></div><p></p></div>
+                </div>
+              </div>
+            </section>`);
+          const form = document.querySelector('#audit-form');
+          const meter = document.querySelector('#audit-result .score-meter span');
+          const text = document.querySelector('#audit-result p');
+          const update = () => {
+            const checked = form.querySelectorAll('input:checked').length;
+            const percent = Math.round((checked / items.length) * 100);
+            if (meter) meter.style.width = `${percent}%`;
+            if (text) {
+              if (percent < 40) text.innerHTML = '<strong>À structurer :</strong> commencez par l’inventaire des fichiers, des auteurs et des contenus tiers.';
+              else if (percent < 75) text.innerHTML = '<strong>Bonne base :</strong> complétez la licence, les crédits, les formats sources et les éléments d’accessibilité.';
+              else text.innerHTML = '<strong>Presque publiable :</strong> relisez comme un visiteur externe et testez les liens avant diffusion.';
+            }
+          };
+          form.addEventListener('change', update); update();
+        };
+
+        const renderTemplateGenerators = () => {
+          const section = document.querySelector('#mode-emploi')?.closest('section');
+          if (!section || document.querySelector('#generateurs')) return;
+          section.insertAdjacentHTML('afterend', `
+            <section class="tool-section" id="generateurs" aria-labelledby="generateurs-title">
+              <div class="tool-inner">
+                <p class="kicker">Générateurs</p>
+                <h2 id="generateurs-title">Produire un README ou une fiche ressource</h2>
+                <p>Ces formulaires génèrent un brouillon Markdown directement dans la page. Les informations saisies restent dans le navigateur.</p>
+                <div class="tool-grid">
+                  <form class="tool-panel" id="readme-form">
+                    <h3>README pédagogique</h3>
+                    <label for="readme-title">Titre</label><input id="readme-title" name="title" placeholder="Ex. Atelier d'alignement pédagogique">
+                    <label for="readme-public">Public cible</label><input id="readme-public" name="public" placeholder="Ex. enseignants du supérieur">
+                    <label for="readme-description">Description courte</label><textarea id="readme-description" name="description" placeholder="Décrire la ressource et son usage principal."></textarea>
+                    <label for="readme-license">Licence</label><select id="readme-license" name="license"><option>CC BY 4.0</option><option>CC0 1.0 Universal</option><option>CC BY-SA 4.0</option><option>Licence à préciser</option></select>
+                    <button class="button" type="submit">Générer le README</button>
+                  </form>
+                  <div class="copy-block" id="readme-output"><pre><code>Complétez le formulaire pour générer un brouillon de README.</code></pre></div>
+                  <form class="tool-panel" id="fiche-form">
+                    <h3>Fiche ressource</h3>
+                    <label for="fiche-title">Titre</label><input id="fiche-title" name="title" placeholder="Ex. Jeu de cartes pour concevoir une séance">
+                    <label for="fiche-type">Type de ressource</label><input id="fiche-type" name="type" placeholder="Atelier, guide, jeu sérieux, webapp...">
+                    <label for="fiche-duration">Durée</label><input id="fiche-duration" name="duration" placeholder="Ex. 45 minutes">
+                    <label for="fiche-objectives">Objectifs pédagogiques</label><textarea id="fiche-objectives" name="objectives" placeholder="Un objectif par ligne."></textarea>
+                    <button class="button" type="submit">Générer la fiche</button>
+                  </form>
+                  <div class="copy-block" id="fiche-output"><pre><code>Complétez le formulaire pour générer une fiche ressource.</code></pre></div>
+                </div>
+              </div>
+            </section>`);
+          const updateBlock = (selector, t) => { const code = document.querySelector(`${selector} code`); if (code) code.textContent = t.trim(); enhanceCopyBlocks(); };
+          document.querySelector('#readme-form').addEventListener('submit', (event) => {
+            event.preventDefault(); const form = event.currentTarget;
+            const title = getValue(form, 'title') || '[Titre de la ressource]';
+            const target = getValue(form, 'public') || '[Public cible]';
+            const description = getValue(form, 'description') || '[Description courte de la ressource.]';
+            const license = getValue(form, 'license') || '[Licence]';
+            const licenseNotice = license === 'CC BY 4.0'
+              ? 'Ressource éducative libre (REL) au sens de la Recommandation UNESCO de 2019. Sauf mention contraire, les contenus originaux sont placés sous licence Creative Commons Attribution 4.0 International — CC BY 4.0. Les contenus tiers conservent leurs droits et licences propres. Voir le site principal de JEDI-OpenLab pour plus d’informations.'
+              : `Sauf mention contraire, les contenus originaux de ce projet sont placés sous ${license}.`;
+            updateBlock('#readme-output', `# ${title}\n\n## Présentation\n\n${description}\n\n## Public cible\n\nCette ressource s’adresse à : ${target}.\n\n## Contenu du dépôt\n\n- \`docs/\` : documentation ou site publié\n- \`assets/\` : images, médias et fichiers associés\n- \`sources/\` : fichiers sources modifiables\n- \`credits/\` : sources, crédits et droits tiers\n\n## Utilisation\n\n[Expliquer comment consulter, utiliser, adapter ou animer la ressource.]\n\n## Licence\n\n${licenseNotice}\n\nLes marques, logiciels, services tiers, documents sources et ressources citées restent soumis à leurs licences et droits respectifs.`);
+          });
+          document.querySelector('#fiche-form').addEventListener('submit', (event) => {
+            event.preventDefault(); const form = event.currentTarget;
+            const title = getValue(form, 'title') || '[Titre de la ressource]';
+            const type = getValue(form, 'type') || '[Type de ressource]';
+            const duration = getValue(form, 'duration') || '[Durée estimée]';
+            const objectives = getValue(form, 'objectives').split('\n').map((line) => line.trim()).filter(Boolean).map((line) => `- ${line}`).join('\n') || '- [Objectif pédagogique]';
+            updateBlock('#fiche-output', `# Fiche ressource pédagogique\n\n## Titre\n\n${title}\n\n## Type de ressource\n\n${type}\n\n## Public cible\n\n[Indiquer le public concerné, le niveau et les prérequis éventuels.]\n\n## Durée estimée\n\n${duration}\n\n## Objectifs pédagogiques\n\n${objectives}\n\n## Matériel nécessaire\n\n- [Support, outil ou équipement]\n\n## Déroulé conseillé\n\n1. [Étape 1]\n2. [Étape 2]\n3. [Étape 3]\n\n## Licence et crédits\n\n[Indiquer la licence, les auteurs, les contributeurs, les sources et les droits tiers.]`);
+          });
+        };
+
+        const init = () => { renderHomeDashboard(); renderLicenseHelper(); renderAuditTool(); renderTemplateGenerators(); enhanceCopyBlocks(); enhanceTables(); };
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+      })();
+    </script>
+  </body>
+</html>

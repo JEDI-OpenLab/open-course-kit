@@ -1,0 +1,5 @@
+# Sauvegarde locale de l'ancien site (archivage manuel ultérieur) — ne pas publier
+_old/
+
+# Divers OS / éditeurs
+.DS_Store

@@ -1,20 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>Accessibilité et réutilisabilité — Open Course Kit</title>
-  <meta name="description" content="Guide pratique pour rendre une ressource pédagogique ouverte plus accessible, lisible, réutilisable et adaptable." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
-
-  <main>
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Accessibilité et réutilisabilité" description="Guide pratique pour rendre une ressource pédagogique ouverte plus accessible, lisible, réutilisable et adaptable.">
+  <div class="guide">
     <section class="hero">
       <p class="eyebrow">Accessibilité et réutilisabilité</p>
       <h1>Rendre une ressource pédagogique vraiment utilisable</h1>
@@ -408,9 +396,5 @@ Indiquer comment adapter l’activité à un autre contexte.</code></pre>
         plus claire, plus robuste et plus accueillante.
       </p>
     </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
-</html>
+  </div>
+</Base>

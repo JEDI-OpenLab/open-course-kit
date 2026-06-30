@@ -1,20 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f8f5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111c21" media="(prefers-color-scheme: dark)" />
-  <title>Structurer un dépôt GitHub — Open Course Kit</title>
-  <meta name="description" content="Guide pratique pour structurer un dépôt GitHub, documenter une ressource pédagogique ouverte et la publier avec GitHub Pages." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header"></header>
-
-  <main>
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Structurer un dépôt GitHub" description="Guide pratique pour structurer un dépôt GitHub, documenter une ressource pédagogique ouverte et la publier avec GitHub Pages.">
+  <div class="guide">
     <section class="hero">
       <p class="eyebrow">Structurer et publier</p>
       <h1>Utiliser GitHub pour publier une ressource pédagogique ouverte</h1>
@@ -472,9 +460,5 @@ Les marques, logos, logiciels, services tiers et documents cités restent soumis
         réutilisable et publiable. Le triptyque minimal : <code>README.md</code>, <code>LICENSE</code>, documentation claire. Le reste peut venir ensuite.
       </p>
     </section>
-  </main>
-
-  <footer class="site-footer"></footer>
-  <script src="app.js" defer></script>
-</body>
-</html>
+  </div>
+</Base>
