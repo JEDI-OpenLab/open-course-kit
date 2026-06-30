@@ -8,6 +8,11 @@
 .site-header .brand{display:inline-flex;align-items:center;gap:.55ch}
 .brand-logo{border-radius:6px;flex:0 0 auto}
 .nav-actions{display:flex;align-items:center;gap:.3rem;margin-left:.4rem}
+
+/* Liens « méta » de fin de menu (homogènes avec Doceria) */
+.nav-link.nav-gh,.nav-link.nav-ext{display:inline-flex;align-items:center;gap:.42em}
+.nav-link.nav-gh svg{flex:0 0 auto}
+.nav-link.nav-ext svg{flex:0 0 auto;opacity:.65;margin-top:.05em}
 .menu-toggle{display:none;place-items:center;width:38px;height:38px;border:1px solid var(--line-strong);border-radius:10px;background:transparent;color:var(--ink);cursor:pointer;transition:color .15s,border-color .15s}
 .menu-toggle:hover{color:var(--accent-ink);border-color:var(--accent)}
 .menu-toggle svg{display:block}
