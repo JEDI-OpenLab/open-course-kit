@@ -6,11 +6,11 @@ import Footer from '../components/Footer.astro';
 
 const {
   title = 'Open Course Kit',
-  description = 'Open Course Kit — un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes.',
+  description = 'Open Course Kit, un guide pratique pour comprendre les ressources éducatives libres, choisir une licence, préparer un dépôt et publier des ressources pédagogiques ouvertes.',
 } = Astro.props;
 
 const titleFull = title === 'Open Course Kit'
-  ? 'Open Course Kit — Publier des ressources pédagogiques ouvertes'
+  ? 'Open Course Kit, Publier des ressources pédagogiques ouvertes'
   : `${title} · Open Course Kit`;
 
 const SITE_VERSION = '2026-06-26.1';
@@ -249,7 +249,7 @@ const ogImage = 'https://jedi-openlab.github.io/open-course-kit/PIX/jedi-openlab
             const description = getValue(form, 'description') || '[Description courte de la ressource.]';
             const license = getValue(form, 'license') || '[Licence]';
             const licenseNotice = license === 'CC BY 4.0'
-              ? 'Ressource éducative libre (REL) au sens de la Recommandation UNESCO de 2019. Sauf mention contraire, les contenus originaux sont placés sous licence Creative Commons Attribution 4.0 International — CC BY 4.0. Les contenus tiers conservent leurs droits et licences propres. Voir le site principal de JEDI-OpenLab pour plus d’informations.'
+              ? 'Ressource éducative libre (REL) au sens de la Recommandation UNESCO de 2019. Sauf mention contraire, les contenus originaux sont placés sous licence Creative Commons Attribution 4.0 International, CC BY 4.0. Les contenus tiers conservent leurs droits et licences propres. Voir le site principal de JEDI-OpenLab pour plus d’informations.'
               : `Sauf mention contraire, les contenus originaux de ce projet sont placés sous ${license}.`;
             updateBlock('#readme-output', `# ${title}\n\n## Présentation\n\n${description}\n\n## Public cible\n\nCette ressource s’adresse à : ${target}.\n\n## Contenu du dépôt\n\n- \`docs/\` : documentation ou site publié\n- \`assets/\` : images, médias et fichiers associés\n- \`sources/\` : fichiers sources modifiables\n- \`credits/\` : sources, crédits et droits tiers\n\n## Utilisation\n\n[Expliquer comment consulter, utiliser, adapter ou animer la ressource.]\n\n## Licence\n\n${licenseNotice}\n\nLes marques, logiciels, services tiers, documents sources et ressources citées restent soumis à leurs licences et droits respectifs.`);
           });
